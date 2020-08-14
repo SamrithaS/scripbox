@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     boxShadow:{
       sm: '0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 1.5px rgba(0, 0, 0, 0.5)',
-      md:'0px 2px 7px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.2)'
+      md:'0px 2px 7px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.2)',
+      lg:'0px 0.5px 2px rgba(0, 0, 0, 0.1), 0px 2px 3px rgba(0, 0, 0, 0.07);'
     },
     screens: {
       'xl': {'max': '1279px'},
@@ -48,7 +49,8 @@ module.exports = {
         "textgrey":'#737373',
         "h3font":'#181818',
         'lightblue':'#ebf8ff',
-        'fontclr':"#404040"
+        'fontclr':"#404040",
+        'bgblue1':'#cbe3f6',
       },
     },
   },
