@@ -51,6 +51,10 @@ module.exports = {
         'lightblue':'#ebf8ff',
         'fontclr':"#404040",
         'bgblue1':'#cbe3f6',
+        'bgyellow2':'#fbe5bb',
+        'bgblue3':'#8cc6f1',
+        'bggreen1':'#008088',
+        'bgviolet':'#553c9a'
       },
     },
   },
