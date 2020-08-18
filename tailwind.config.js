@@ -53,10 +53,18 @@ module.exports = {
         'bgblue1':'#cbe3f6',
         'bgyellow2':'#fbe5bb',
         'bgblue3':'#8cc6f1',
-        'bggreen1':'#008088',
+        'bggreen2':'#008088',
         'bgviolet':'#553c9a'
       },
+      width: {
+               '64': '28rem',
+                },
+                height: {
+                  '6':'2px',
+                 
+                      }
     },
+  
   },
   variants: {},
   plugins: [],

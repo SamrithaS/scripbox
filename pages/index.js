@@ -5,16 +5,16 @@ export default function IndexPage() {
     <div>
       <Nav />
       <section class="bg-gray">
-        <div className="max-w-6xl px-6 pt-20 pb-6 mx-auto lg:px-4">
-          <div class="flex  items-center">
+        <div className="max-w-6xl px-6 pt-20 pb-6 mx-auto lg:px-4 sm:pt-5">
+          <div class="flex  items-center sm:hidden">
             <img src="./" />
             <span class="pl-3 pr-3">></span>
             <p class="bg-white text-xs text-font font-thin">Mutual Funds</p>
           </div>
 
           <div>
-            <h2 class="font-bold text-4xl">Mutual Funds</h2>
-            <p class="text-lg text-fontgrey font-thin max-w-lg">
+            <h2 class="font-bold text-4xl sm:text-xl">Mutual Funds</h2>
+            <p class="text-lg text-fontgrey font-thin max-w-lg sm:hidden">
               Invest in the best mutual funds recommended by Scripbox that are
               algorithmically selected that best suit your needs.
             </p>
@@ -1957,7 +1957,7 @@ export default function IndexPage() {
               <button class="px-3 py-2 bg-white shadow-md rounded-md text-fontgrey text-sm">
                 Previous
               </button>
-              <ul class="flex space-x-6 shadow-md rounded-md bg-white">
+              <ul class="flex space-x-6 shadow-md rounded-md bg-white lg:hidden">
                 {" "}
                 <a href="#" class="">
                   <li class=" pl-3 py-2 ">1</li>
@@ -1988,14 +1988,14 @@ export default function IndexPage() {
           </div>
         </div>
       </section>
-      <section class="bg-lightblue pb-20">
-        <div class="max-w-6xl mx-auto pt-20 flex pl-2 justify-between items-start content-start flex-wrap lg:mr-2  lg:max-w-2xl">
+      <section class="bg-lightblue pb-20 sm:pb-6">
+        <div class="max-w-6xl mx-auto lg:pr-2 pt-20 lg:pt-10 flex pl-2 justify-between items-start content-start flex-wrap  lg:max-w-2xl">
           <div class="lg:order-2">
             <div class="lg:hidden">
               <span class="text-sm text-fontgrey font-normal">
                 How does Scripbox rate funds?
               </span>
-              <h1 class="text-3xl font-bold max-w-sm leading-8 pt-2 pb-3">
+              <h1 class="text-3xl font-bold max-w-sm leading-8 pt-2 pb-3 ">
                 Proprietary 4-step system to rate mutual funds
               </h1>
               <p class="max-w-xs text-fontgrey text-md font-thin pb-4">
@@ -2022,14 +2022,14 @@ export default function IndexPage() {
             </div>
           </div>
           <div class="lg:order-1">
-            <div class="hidden lg:block">
-              <span class="text-sm text-fontgrey font-normal">
+            <div class="hidden lg:block ">
+              <p class="text-sm text-fontgrey font-normal sm:text-center">
                 How does Scripbox rate funds?
-              </span>
-              <h1 class="text-3xl font-bold  leading-8 pt-2 pb-3">
+              </p>
+              <h1 class="text-3xl font-bold  sm:pt-1 leading-8 pt-2 pb-3 sm:text-2xl sm:max-w-xs sm:text-center sm:mx-auto">
                 Proprietary 4-step system to rate mutual funds
               </h1>
-              <p class=" text-fontgrey text-md font-thin pb-4">
+              <p class=" text-fontgrey text-md font-thin pb-4 sm:text-center">
                 We use a proprietary system to rate mutual funds and based on
                 that make a recommendation or top ranking
               </p>
@@ -2038,7 +2038,7 @@ export default function IndexPage() {
               <div class="shadow-lg bg-white rounded-b-md pl-3">
                 <div class="pr-1 pt-4  pb-5  pl-3 ">
                   <svg
-                    class="w-8 h-8"
+                    class="w-8 h-8 sm:hidden"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 32 31"
@@ -2090,7 +2090,7 @@ export default function IndexPage() {
                 </div>
                 <div class="pr-3 pt-4 pl-3  pb-5">
                   <svg
-                    class="w-8 h-8"
+                    class="w-8 h-8 sm:hidden"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 32 32"
@@ -2128,7 +2128,7 @@ export default function IndexPage() {
               <div class="pl-4 bg-white shadow-lg rounded-b-md">
                 <div class="pt-4">
                   <svg
-                    class="w-8 h-8"
+                    class="w-8 h-8 sm:hidden"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 32 32"
@@ -2163,7 +2163,7 @@ export default function IndexPage() {
 
                 <div class="pt-8 ">
                   <svg
-                    class="w-8 h-8"
+                    class="w-8 h-8 sm:hidden"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 32 32"
@@ -2210,9 +2210,9 @@ export default function IndexPage() {
           </div>
         </div>
       </section>
-      <section class="bg-gray pb-20">
-        <div class="max-w-6xl mx-auto py-5 pt-16">
-          <h2 class="text-3xl font-semibold text-center">
+      <section class="bg-gray pb-20 sm:pb-8">
+        <div class="max-w-6xl mx-auto py-5 pt-16 lg:pl-2">
+          <h2 class="text-3xl font-semibold text-center sm:text-xl">
             How to invest in best mutual funds with Scripbox
           </h2>
           <p class="text-md max-w-md mx-auto font-thin text-center text-textgrey pt-2">
@@ -2375,7 +2375,7 @@ export default function IndexPage() {
               </div>
             </div>
             <div class="max-w-xs rounded-md shadow-lg lg:flex-shrink-0">
-              <div class="bg-bggreen1  rounded-t-md py-8">
+              <div class="bg-bggreen2  rounded-t-md py-8">
                 <svg
                   class="w-16 h-16 mx-auto"
                   xmlns="http://www.w3.org/2000/svg"
@@ -2467,22 +2467,254 @@ export default function IndexPage() {
         </div>
       </section>
       <section>
-        <div class="max-w-6xl mx-auto pt-20">
-          <h3 class="text-3xl font-semibold text-center">
+        <div class="max-w-6xl mx-auto pt-20 px-3 sm:pt-12">
+          <h3 class="text-3xl font-semibold text-center sm:text-2xl">
             What are Best Equity Mutual Funds?
           </h3>
-          <div class="flex">
+          <div class="flex justify-between pt-12 lg:flex-wrap sm:pt-5">
             <div>
-              <h4 class="font-semibold text-xl pb-3">Why invest in mutual funds?</h4>
-              <p class="text-textgrey">
+              <h4 class="font-semibold text-xl pb-3">
+                Why invest in mutual funds?
+              </h4>
+              <p class="text-textgrey max-w-lg lg:max-w-4xl">
                 Invest in the best mutual funds to invest recommended by
                 Scripbox that are scientifically and algorithmically selected
-                that best suit your needs. Be it long-term, short-term, tax
-                saving or your emergency needs. We have you covered. Let’s take
-                a look at the top mutual funds to invest this year. You can
-                invest in the mutual funds based on broad categories namely
-                equity funds, debt funds, balanced fund, and liquid funds
+                that best suit your needs.
               </p>
+              <p class="text-textgrey lg:max-w-4xl max-w-lg pt-2">
+                Be it long-term, short-term, tax saving or your emergency needs.
+                We have you covered. Let’s take a look at the top mutual funds
+                to invest this year. You can invest in the mutual funds based on
+                broad categories namely equity funds, debt funds, balanced fund,
+                and liquid funds
+              </p>
+            </div>
+
+            <iframe
+              class="w-64 lg:h-64 rounded-md lg:mx-auto lg:pt-10"
+              src="https://www.youtube.com/embed/G8_zxdLM1Ao"
+            ></iframe>
+          </div>
+          <div class="py-16 ">
+            <h4 class="font-semibold text-xl pb-4">Invest Now</h4>
+            <div class="flex space-x-12 lg:flex-wrap lg:space-x-0">
+              <div class="max-w-xs lg:max-w-4xl">
+                <h4 class="font-semibold">Scientifically-chosen funds</h4>
+                <p class="text-textgrey text-sm pt-2">
+                  Scripbox algorithms help you choose the best mutual funds to
+                  invest now in India from over 8,000 choices based on their
+                  historical performance
+                </p>
+              </div>
+              <div class="max-w-xs lg:max-w-4xl lg:pt-4">
+                <h4 class="font-semibold">Start modest</h4>
+                <p class="text-textgrey text-sm pt-2">
+                  Start small, stay strong. The longer you stay invested with
+                  us, the better your returns are. Why? Because it is the magic
+                  of compounding
+                </p>
+              </div>
+              <div class="max-w-xs lg:max-w-4xl lg:pt-4">
+                <h4 class="font-semibold">One-click investment</h4>
+                <p class="text-textgrey text-sm pt-2">
+                  Choose between SIPs (Systematic Investment Plan) and OTIs
+                  (one-time investments). Invest in top mutual funds to invest
+                  in India with a single click.
+                </p>
+              </div>
+              <div class="max-w-xs lg:max-w-4xl lg:pt-4">
+                <h4 class="font-semibold">Track your investments</h4>
+                <p class="text-textgrey text-sm pt-2">
+                  We help you stay on track with your investments and also
+                  inform you in case you need to change your selection.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between items-start lg:flex-wrap">
+              <div class="">
+                <h3 class="font-semibold text-xl">What are Mutual funds?</h3>
+                <p class="pb-4  pt-2 text-textgrey font-normal text-sm">
+                  An asset management company AMC or fund house pools
+                  investments made by individual investors and institutional
+                  investors. With this pool of investments, an AMC forms a
+                  mutual fund.
+                </p>
+                <p class="pb-4  text-textgrey font-normal text-sm">
+                  AMCs have fund managers who manage the fund investments amount
+                  and invest in stocks, securities, and bonds, etc on the behalf
+                  of investors.
+                </p>
+                <p class="text-textgrey font-normal text-sm">
+                  Mutual fund investors are allocated units of the fund against
+                  the quantum of investment. These units can be re-invested or
+                  redeemed by investors on the maturity of the fund at the NAV.
+                </p>
+              </div>
+              <div class="flex bg-lightblue rounded-md space-x-3 ml-8 max-w-lg pt-4 pb-8 pl-5 pr-10 items-start sm:mt-5 sm:max-w-2xl lg:ml-0 mt-8">
+                <svg
+                  class="w-16 h-8"
+                  viewBox="0 0 26 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.365 0C6.49771 0 0.911133 5.60754 0.911133 12.5C0.911133 19.3925 6.49771 25 13.365 25C20.2323 25 25.8189 19.3925 25.8189 12.5C25.8189 5.60754 20.2323 0 13.365 0Z"
+                    fill="#43A6DD"
+                  ></path>
+                  <path
+                    d="M15.5305 17.3909H13.9061V11.4126C13.9061 11.1125 13.6639 10.8691 13.3646 10.8691H11.1987C10.8994 10.8691 10.6572 11.1125 10.6572 11.4126C10.6572 11.7128 10.8994 11.9561 11.1987 11.9561H12.8231V17.3909H11.1987C10.8994 17.3909 10.6572 17.6342 10.6572 17.9344C10.6572 18.2345 10.8994 18.4778 11.1987 18.4778H15.5305C15.8298 18.4778 16.072 18.2345 16.072 17.9344C16.072 17.6342 15.8298 17.3909 15.5305 17.3909Z"
+                    fill="white"
+                  ></path>
+                  <path
+                    d="M13.3652 9.23934C13.9633 9.23934 14.4481 8.7527 14.4481 8.15239C14.4481 7.55208 13.9633 7.06543 13.3652 7.06543C12.7671 7.06543 12.2822 7.55208 12.2822 8.15239C12.2822 8.7527 12.7671 9.23934 13.3652 9.23934Z"
+                    fill="white"
+                  ></path>
+                </svg>
+                <div>
+                  <h3 class="pb-2">What is a mutual fund NAV?</h3>
+                  <p class="text-textgrey font-normal text-sm">
+                    Net asset value NAV is the market price of the fund. It is
+                    important because it represents the worth of each share of
+                    the fund. One can say just like shares have a share price,
+                    mutual funds have a NAV to represent it’s worth.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="h-6 w-20 bg-orange rounded-md mt-10 mb-6"></div>
+            <div>
+              <h3 class="text-xl font-semibold">
+                How to Select the Top Performing Mutual Funds in India in 2020?
+              </h3>
+              <p class="max-w-2xl pt-2 text-blackdark font-thin">
+                An investor would ultimately want a mutual fund that provides a
+                higher return. The entire selection process can be guided by
+                three attributes which are an investor’s life goals,
+                understanding of investment risk and investment horizon
+              </p>
+            </div>
+            <div class="flex pt-12 justify-between space-x-4 md:flex-wrap md:space-x-0">
+              <div class="max-w-xl md:flex-shrink-0 md:max-w-3xl ">
+                <h3 class="font-semibold pb-3 text-lg">Investment Objective</h3>
+                <p class="text-sm  font-thin text-textgrey pb-3">
+                  An investor should first sort out his personal life goals and
+                  corresponding to the life goals an investment plan must be
+                  chosen. Each scheme is different from the other and serves a
+                  different purpose.
+                </p>
+                <p class="text-sm  font-thin text-textgrey pb-3">
+                  Hence to arrive at a meaningful decision the fund investments
+                  objective must match an investor’s goals, investment plan and
+                  risk appetite. A long term objective cannot be met with a
+                  short term scheme.
+                </p>
+                <p class="text-sm  font-thin text-textgrey pb-3">
+                  All the necessary details related to the scheme, its asset
+                  allocation, objective, and strategy are available in the key
+                  information document and scheme information document.
+                </p>
+              </div>
+              <div class="max-w-xl pl-8 md:pl-0 md:flex-shrink-0 md:max-w-3xl md:pt-4 ">
+                <h3 class="font-semibold pb-3 text-lg">Fund History</h3>
+                <p class="text-sm font-thin text-textgrey pb-3">
+                  The fund history is the track record of the fund’s performance
+                  in the past during the ups and downs of the market. This shows
+                  the strength of the fund during tough times.
+                </p>
+                <p class="text-sm font-thin text-textgrey pb-3">
+                  A recently launched fund may or may not outperform the tough
+                  times i.e. bear runs in the market since it does not have
+                  dealt with such scenarios. On the other hand, a fund with a
+                  good history of generating consistent returns shows the
+                  accuracy of investment strategies.
+                </p>
+                <p class="text-sm font-thin text-textgrey pb-3">
+                  To shortlist, an investor must check the track for the same
+                  period for which the investment horizon is decided. For
+                  example, if an investor is willing to invest for say 5 years
+                  he must check the track record of 5 years of the fund. Expense
+                  Ratio
+                </p>
+              </div>
+            </div>
+            <div class="flex pt-12 justify-between space-x-4 md:flex-wrap md:space-x-0 md:pt-4">
+              <div class="max-w-xl pr-6 lg:pr-0 md:max-w-3xl ">
+                <h3 class="font-semibold pb-3 text-lg">Expense Ratio</h3>
+                <p class="text-sm font-thin text-textgrey pb-3">
+                  An annual fee is charged by the fund house manager for
+                  managing an investor’s funds, this is called expense ratio and
+                  expressed as a percentage. The final payoff to an investor
+                  will be the returns generated minus the expense ratio. The net
+                  amount is the final amount that an investor received.
+                </p>
+                <p class="text-sm font-thin text-textgrey pb-3">
+                  A higher expense ratio would result in lower returns for an
+                  investor. Hence while considering a fund, an investor must
+                  choose a fund with a lower expense ratio compared to peer
+                  funds in the category
+                </p>
+              </div>
+              <div class="max-w-xl md:max-w-3xl md:pt-4 ">
+                <h3 class="font-semibold pb-3 text-lg">
+                  Performance of fund manager
+                </h3>
+                <p class="text-sm font-thin text-textgrey pb-3">
+                  The fund manager’s involvement is critical in the performance
+                  of a fund. It is the fund manager’s responsibility to ensure
+                  the show is going smoothly. It is important to know the track
+                  record of the fund manager.
+                </p>
+                <p class="text-sm font-thin text-textgrey pb-3">
+                  An investor must check the performance of the fund during the
+                  market rally and slump. Better fund management is showcased
+                  when a fund provides consistent returns and contains losses
+                  during the bear runs of the market.
+                </p>
+              </div>
+            </div>
+            <div class="h-6 w-20 bg-orange rounded-md mt-10 mb-6"></div>
+            <div class="flex items-center lg:flex-wrap">
+              <div class="max-w-2xl pr-6 lg:pr-0 lg:max-w-6xl ">
+                <h3 class="font-semibold pb-3 text-xl">
+                  How to invest in Top Performing Mutual Fund?
+                </h3>
+                <p class="text-base font-thin text-textgrey pb-3">
+                  An investor can invest a lump sum one time or through SIP
+                  periodically. An investor can choose to invest lump sum one
+                  time if he has considerable corpus to invest for a
+                  longer-term. While SIP is a regular investment over a period
+                  of time.
+                </p>
+                <p class="text-base font-thin text-textgrey pb-3">
+                  An investor can choose to invest monthly, quarterly or
+                  half-yearly. SIP mutual funds are recommended for the first
+                  time mutual fund investors.
+                </p>
+                <p class="text-base font-thin text-textgrey pb-3">
+                  Investing through Scripbox is made easy and{" "}
+                  <span class="text-black font-semibold"> paperless</span>. All
+                  you need to do is follow the 5 easy steps to start investing.
+                </p>
+              </div>
+            <ul class="shadow-md rounded-md px-6 py-6 mx-auto lg:mt-6">
+              <li class="text-black font-semibold text-md pb-4">
+              Sign in at scripbox.com
+              </li>
+              <li class="text-black font-semibold text-md pb-4">
+              Enter your personal details like dob, gender
+              </li>
+              <li class="text-black font-semibold text-md pb-4">
+              Complete your KYC
+              </li>
+              <li class="text-black font-semibold text-md pb-4">
+              Add your bank details
+              </li>
+              <li class="text-black font-semibold text-md ">
+              Create a new plan and start investing
+              </li>
+            </ul>
             </div>
           </div>
         </div>
