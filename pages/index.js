@@ -1,6 +1,7 @@
 import Nav from "../components/nav";
 import React, { useState, Component } from "react";
 export default function IndexPage() {
+  const [val, setval] = useState(5000);
   return (
     <div>
       <Nav />
@@ -294,11 +295,27 @@ export default function IndexPage() {
                   </span>
                 </li>
               </ul>
-              <div class="flex justify-between pt-4 border-b border-bgdarkgrey pb-4">
-                <p class="font-semibold">Minimum Investment</p>
-                <span class="text-bgblue text-sm">₹5000+</span>
+              <div class="pt-4 border-b border-bgdarkgrey pb-4">
+                <div class="flex justify-between pb-3">
+                  {" "}
+                  <p class="font-semibold">Minimum Investment</p>
+                  <span class="text-bgblue text-sm">₹{val}+</span>
+                </div>
+
+                <input
+                  type="range"
+                  min="200"
+                  max="10000"
+                  value={val}
+                  class="w-102"
+                  id="myRange"
+                  onChange={e => {
+                    setval(e.target.value);
+                    console.log(e);
+                  }}
+                ></input>
               </div>
-              <h3 class="pt-2 font-semibold">Fund Category</h3>
+              <h3 class="pt-2 font-semibold">Fund House</h3>
               <ul class="pt-2 pb-2 border-b border-bgdarkgrey">
                 <li class="flex justify-between items-center pb-2 font-thin text-fontgrey">
                   <div>
@@ -354,9 +371,16 @@ export default function IndexPage() {
               <p>Showing 20 of 126 funds</p>{" "}
               <div class="flex items-center">
                 <p class="text-fontgrey text-xs pr-4">Sort by </p>
-                <span class="bg-white py-2 px-4 shadow-sm rounded-md">
-                  Recommended
-                </span>
+
+                <select class="bg-white py-2 px-4 shadow-sm rounded-md">
+                  <option value="audi" selected>
+                    Recommended{" "}
+                  </option>
+                  <option value="volvo">Track Record</option>
+                  <option value="saab">Relative Size</option>
+                  <option value="vw">Category View</option>
+                  <option value="vw">Consistency</option>
+                </select>
               </div>
             </div>
             <div class="bg-white shadow-md rounded-md px-3 py-3 mt-4 mb-6">
@@ -413,15 +437,17 @@ export default function IndexPage() {
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
                       </span>{" "}
-                      <p class="bg-bgorange text-orange text-sm lg:hidden">
+                      <p class="bg-bgorange text-orange text-sm ">
                         Recommended
                       </p>{" "}
-                      <p class="bg-bggreen text-sm text-green">Top Ranked</p>
+                      <p class="bg-bggreen text-sm text-green lg:hidden">
+                        Top Ranked
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="flex items-center space-x-4 ">
+                  <div class="flex lg:hidden items-center space-x-4 ">
                     <span class="pr-2 lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
@@ -462,8 +488,8 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
-                  <div class="flex space-x-5 pt-1">
-                    <span class="lg:hidden text-fontgrey font-thin text-sm">
+                  <div class="lg:hidden flex space-x-5 pt-1">
+                    <span class="text-fontgrey font-thin text-sm">
                       Fund Size
                     </span>
                     <span class="text-fontgrey text-sm">5Y returns</span>
@@ -494,16 +520,18 @@ export default function IndexPage() {
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
                       </span>{" "}
-                      <p class="bg-bgorange text-orange text-sm lg:hidden">
+                      <p class="bg-bgorange text-orange  text-sm ">
                         Recommended
                       </p>{" "}
-                      <p class="bg-bggreen text-sm text-green">Top Ranked</p>
+                      <p class="bg-bggreen text-sm text-green lg:hidden ">
+                        Top Ranked
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="flex items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                  <div class="flex lg:hidden items-center space-x-4">
+                    <span class="pr-2 ">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -543,7 +571,7 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
-                  <div class="flex space-x-5 pt-1">
+                  <div class="flex lg:hidden space-x-5 pt-1">
                     <span class="lg:hidden text-fontgrey font-thin text-sm">
                       Fund Size
                     </span>
@@ -573,15 +601,17 @@ export default function IndexPage() {
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
                       </span>{" "}
-                      <p class="bg-bgorange text-orange text-sm lg:hidden">
+                      <p class="bg-bgorange text-orange text-sm ">
                         Recommended
                       </p>{" "}
-                      <p class="bg-bggreen text-sm text-green">Top Ranked</p>
+                      <p class="bg-bggreen text-sm text-green lg:hidden">
+                        Top Ranked
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="flex items-center space-x-4">
+                  <div class="flex lg:hidden items-center space-x-4">
                     <span class="pr-2 lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
@@ -622,7 +652,7 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
-                  <div class="flex space-x-5 pt-1">
+                  <div class="flex lg:hidden space-x-5 pt-1">
                     <span class="lg:hidden text-fontgrey font-thin text-sm">
                       Fund Size
                     </span>
@@ -653,15 +683,17 @@ export default function IndexPage() {
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
                       </span>{" "}
-                      <p class="bg-bgorange text-orange text-sm lg:hidden">
+                      <p class="bg-bgorange text-orange text-sm ">
                         Recommended
                       </p>{" "}
-                      <p class="bg-bggreen text-sm text-green">Top Ranked</p>
+                      <p class="bg-bggreen text-sm text-green lg:hidden">
+                        Top Ranked
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="flex items-center space-x-4">
+                  <div class="flex lg:hidden items-center space-x-4">
                     <span class="pr-2 lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
@@ -702,7 +734,7 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
-                  <div class="flex space-x-5 pt-1">
+                  <div class="flex space-x-5  lg:hidden pt-1">
                     <span class="lg:hidden text-fontgrey font-thin text-sm">
                       Fund Size
                     </span>
@@ -763,15 +795,17 @@ export default function IndexPage() {
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
                       </span>{" "}
-                      <p class="bg-bgorange text-orange text-sm lg:hidden">
+                      <p class="bg-bgorange text-orange text-sm ">
                         Recommended
                       </p>{" "}
-                      <p class="bg-bggreen text-sm text-green">Top Ranked</p>
+                      <p class="bg-bggreen text-sm text-green lg:hidden">
+                        Top Ranked
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="flex items-center space-x-4">
+                  <div class="flex lg:hidden items-center space-x-4">
                     <span class="pr-2 lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
@@ -812,7 +846,7 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
-                  <div class="flex space-x-5 pt-1">
+                  <div class="flex lg:hidden space-x-5 pt-1">
                     <span class="lg:hidden text-fontgrey font-thin text-sm">
                       Fund Size
                     </span>
@@ -843,15 +877,15 @@ export default function IndexPage() {
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
                       </span>{" "}
-                      <p class="bg-bgorange text-orange text-sm lg:hidden">
-                        Recommended
-                      </p>{" "}
-                      <p class="bg-bggreen text-sm text-green">Top Ranked</p>
+                      <p class="bg-bgorange text-orange text-sm">Recommended</p>{" "}
+                      <p class="bg-bggreen text-sm text-green lg:hidden">
+                        Top Ranked
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="flex items-center space-x-4">
+                  <div class="flex  lg:hidden items-center space-x-4">
                     <span class="pr-2 lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
@@ -892,7 +926,7 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
-                  <div class="flex space-x-5 pt-1">
+                  <div class="flex space-x-5  lg:hidden pt-1">
                     <span class="lg:hidden text-fontgrey font-thin text-sm">
                       Fund Size
                     </span>
@@ -922,15 +956,17 @@ export default function IndexPage() {
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
                       </span>{" "}
-                      <p class="bg-bgorange text-orange text-sm lg:hidden">
+                      <p class="bg-bgorange text-orange text-sm ">
                         Recommended
                       </p>{" "}
-                      <p class="bg-bggreen text-sm text-green">Top Ranked</p>
+                      <p class="bg-bggreen text-sm text-green lg:hidden">
+                        Top Ranked
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="flex items-center space-x-4">
+                  <div class="flex lg:hidden items-center space-x-4">
                     <span class="pr-2 lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
@@ -971,7 +1007,7 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
-                  <div class="flex space-x-5 pt-1">
+                  <div class="flex lg:hidden space-x-5 pt-1">
                     <span class="lg:hidden text-fontgrey font-thin text-sm">
                       Fund Size
                     </span>
@@ -1002,15 +1038,17 @@ export default function IndexPage() {
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
                       </span>{" "}
-                      <p class="bg-bgorange text-orange text-sm lg:hidden">
+                      <p class="bg-bgorange text-orange text-sm ">
                         Recommended
                       </p>{" "}
-                      <p class="bg-bggreen text-sm text-green">Top Ranked</p>
+                      <p class="bg-bggreen text-sm text-green lg:hidden">
+                        Top Ranked
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="flex items-center space-x-4">
+                  <div class="flex lg:hidden items-center space-x-4">
                     <span class="pr-2 lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
@@ -1051,7 +1089,7 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
-                  <div class="flex space-x-5 pt-1">
+                  <div class="flex lg:hidden space-x-5 pt-1">
                     <span class="lg:hidden text-fontgrey font-thin text-sm">
                       Fund Size
                     </span>
@@ -1113,15 +1151,17 @@ export default function IndexPage() {
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
                       </span>{" "}
-                      <p class="bg-bgorange text-orange text-sm lg:hidden">
+                      <p class="bg-bgorange text-orange text-sm ">
                         Recommended
                       </p>{" "}
-                      <p class="bg-bggreen text-sm text-green">Top Ranked</p>
+                      <p class="bg-bggreen text-sm text-green lg:hidden">
+                        Top Ranked
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="flex items-center space-x-4">
+                  <div class="flex lg:hidden items-center space-x-4">
                     <span class="pr-2 lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
@@ -1162,7 +1202,7 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
-                  <div class="flex space-x-5 pt-1">
+                  <div class="flex lg:hidden space-x-5 pt-1">
                     <span class="lg:hidden text-fontgrey font-thin text-sm">
                       Fund Size
                     </span>
@@ -1223,15 +1263,17 @@ export default function IndexPage() {
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
                       </span>{" "}
-                      <p class="bg-bgorange text-orange text-sm lg:hidden">
+                      <p class="bg-bgorange text-orange text-sm ">
                         Recommended
                       </p>{" "}
-                      <p class="bg-bggreen text-sm text-green">Top Ranked</p>
+                      <p class="bg-bggreen text-sm text-green lg:hidden">
+                        Top Ranked
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="flex items-center space-x-4">
+                  <div class="flex lg:hidden items-center space-x-4">
                     <span class="pr-2 lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
@@ -1272,7 +1314,7 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
-                  <div class="flex space-x-5 pt-1">
+                  <div class="flex lg:hidden space-x-5 pt-1">
                     <span class="lg:hidden text-fontgrey font-thin text-sm">
                       Fund Size
                     </span>
@@ -2036,7 +2078,7 @@ export default function IndexPage() {
             </div>
             <div class="max-w-xl flex lg:mx-auto ">
               <div class="shadow-lg bg-white rounded-b-md pl-3">
-                <div class="pr-1 pt-4  pb-5  pl-3 ">
+                <div class="pr-1 pt-4  pb-5  pl-3 md:pr-0">
                   <svg
                     class="w-8 h-8 sm:hidden"
                     xmlns="http://www.w3.org/2000/svg"
@@ -2118,7 +2160,7 @@ export default function IndexPage() {
                     ></path>
                   </svg>
                   <h4 class="font-semibold pt-3 pb-2">Sub-asset Class View</h4>
-                  <p class="max-w-xs text-md text-textgrey pr-1 lg:text-sm">
+                  <p class="max-w-xs text-md text-textgrey pr-1 lg:text-sm md:pr-0">
                     We check if the sub-category of the fund is recommended by
                     us
                   </p>
@@ -2596,7 +2638,7 @@ export default function IndexPage() {
               </p>
             </div>
             <div class="flex pt-12 justify-between space-x-4 md:flex-wrap md:space-x-0">
-              <div class="max-w-xl md:flex-shrink-0 md:max-w-3xl ">
+              <div class="max-w-xlmd:max-w-xl ">
                 <h3 class="font-semibold pb-3 text-lg">Investment Objective</h3>
                 <p class="text-sm  font-thin text-textgrey pb-3">
                   An investor should first sort out his personal life goals and
@@ -2616,7 +2658,7 @@ export default function IndexPage() {
                   information document and scheme information document.
                 </p>
               </div>
-              <div class="max-w-xl pl-8 md:pl-0 md:flex-shrink-0 md:max-w-3xl md:pt-4 ">
+              <div class="max-w-xl pl-8 md:pl-0 md:max-w-xl md:pt-4 ">
                 <h3 class="font-semibold pb-3 text-lg">Fund History</h3>
                 <p class="text-sm font-thin text-textgrey pb-3">
                   The fund history is the track record of the fund’s performance
@@ -2640,7 +2682,7 @@ export default function IndexPage() {
               </div>
             </div>
             <div class="flex pt-12 justify-between space-x-4 md:flex-wrap md:space-x-0 md:pt-4">
-              <div class="max-w-xl pr-6 lg:pr-0 md:max-w-3xl ">
+              <div class="max-w-xl pr-6 lg:pr-0 md:max-w-xl ">
                 <h3 class="font-semibold pb-3 text-lg">Expense Ratio</h3>
                 <p class="text-sm font-thin text-textgrey pb-3">
                   An annual fee is charged by the fund house manager for
@@ -2656,7 +2698,7 @@ export default function IndexPage() {
                   funds in the category
                 </p>
               </div>
-              <div class="max-w-xl md:max-w-3xl md:pt-4 ">
+              <div class="max-w-xl md:max-w-xl md:pt-4 ">
                 <h3 class="font-semibold pb-3 text-lg">
                   Performance of fund manager
                 </h3>
@@ -2675,7 +2717,7 @@ export default function IndexPage() {
               </div>
             </div>
             <div class="h-6 w-20 bg-orange rounded-md mt-10 mb-6"></div>
-            <div class="flex items-center lg:flex-wrap">
+            <div class="flex items-center lg:flex-wrap mb-20">
               <div class="max-w-2xl pr-6 lg:pr-0 lg:max-w-6xl ">
                 <h3 class="font-semibold pb-3 text-xl">
                   How to invest in Top Performing Mutual Fund?
@@ -2698,23 +2740,254 @@ export default function IndexPage() {
                   you need to do is follow the 5 easy steps to start investing.
                 </p>
               </div>
-            <ul class="shadow-md rounded-md px-6 py-6 mx-auto lg:mt-6">
-              <li class="text-black font-semibold text-md pb-4">
-              Sign in at scripbox.com
-              </li>
-              <li class="text-black font-semibold text-md pb-4">
-              Enter your personal details like dob, gender
-              </li>
-              <li class="text-black font-semibold text-md pb-4">
-              Complete your KYC
-              </li>
-              <li class="text-black font-semibold text-md pb-4">
-              Add your bank details
-              </li>
-              <li class="text-black font-semibold text-md ">
-              Create a new plan and start investing
-              </li>
-            </ul>
+              <ul class="shadow-md rounded-md px-6 py-6 mx-auto lg:mt-6 ">
+                <li class="text-black font-semibold text-md pb-4">
+                  <span class="bg-lightgreen px-2 py-1 mr-4 rounded-full">
+                    1
+                  </span>
+                  Sign in at scripbox.com
+                </li>
+                <li class="text-black font-semibold text-md pb-4">
+                  <span class="bg-lightgreen px-2 py-1 mr-4 rounded-full">
+                    2
+                  </span>
+                  Enter your personal details like dob, gender
+                </li>
+                <li class="text-black font-semibold text-md pb-4">
+                  <span class="bg-lightgreen px-2 py-1 mr-4 rounded-full">
+                    3
+                  </span>
+                  Complete your KYC
+                </li>
+                <li class="text-black font-semibold text-md pb-4">
+                  <span class="bg-lightgreen px-2 py-1 mr-4 rounded-full">
+                    4
+                  </span>
+                  Add your bank details
+                </li>
+                <li class="text-black font-semibold text-md ">
+                  <span class="bg-lightgreen px-2 py-1 mr-4 rounded-full">
+                    5
+                  </span>
+                  Create a new plan and start investing
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="max-w-6xl mx-auto bg-bgclr pt-6 lg:max-w-4xl rounded-md md:max-w-xl">
+            <h4 class="text-orange bg-white w-48 mx-auto text-center mb-4 rounded-full font-semibold">
+              The Scripbox Promise
+            </h4>
+            <h2 class="text-xl max-w-md font-semibold mx-auto text-center pb-6">
+              Scripbox has helped over 2500 people become millionaires in the
+              last 7 years
+            </h2>
+            <p class="text-white bg-green w-40 mx-auto rounded-md text-center py-1 mb-2">
+              Start Investing Now
+            </p>
+            <div class="flex lg:flex-wrap mt-10 pb-20 mb-20 justify-between mx-3 md:pb-5 md:mb-5 ">
+              <div class="max-w-xs text-center md:flex md:text-left md:items-start md:max-w-4xl ">
+                <svg
+                  class="w-10 h-10 mx-auto"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 39 40"
+                  id="portion"
+                >
+                  <g clip-path="url(#eiclip0)">
+                    <path
+                      d="M25.502 5.745L18 21l15.255 7.502"
+                      fill="#fff"
+                    ></path>
+                    <path
+                      d="M10.498 36.255c8.426 4.143 18.614.672 22.758-7.753 4.142-8.426.671-18.614-7.754-22.757-8.426-4.143-18.614-.672-22.757 7.753-4.143 8.426-.672 18.614 7.753 22.757z"
+                      fill="#fff"
+                    ></path>
+                    <path
+                      d="M24.829 5.414l-7.502 15.255 1.346.662 7.502-15.255-1.346-.662zm-7.16 16.259l15.256 7.502.661-1.346-15.255-7.502-.662 1.346zm.116-1.391L1.41 25.192l.431 1.437 16.374-4.91-.431-1.437zm14.798 7.889c-3.96 8.053-13.7 11.372-21.753 7.411l-.662 1.346c8.797 4.326 19.435.702 23.76-8.095l-1.345-.662zM10.83 35.582C2.775 31.622-.543 21.883 3.417 13.83l-1.346-.662c-4.326 8.798-.701 19.436 8.096 23.761l.662-1.346zM3.417 13.83c3.96-8.053 13.7-11.372 21.753-7.411l.662-1.346C17.036.746 6.398 4.37 2.072 13.168l1.346.661zM25.17 6.418c8.053 3.96 11.372 13.699 7.412 21.753l1.346.662c4.325-8.797.7-19.436-8.096-23.761l-.662 1.346z"
+                      fill="#9F7AEA"
+                    ></path>
+                    <path d="M18 1v19a1 1 0 001 1h19" fill="#E7FEF8"></path>
+                    <path
+                      d="M18 1v19a1 1 0 001 1h19C38 9.954 29.046 1 18 1z"
+                      fill="#E7FEF8"
+                    ></path>
+                    <path
+                      d="M18 1V.25h-.75V1H18zm20 20v.75h.75V21H38zM17.25 1v19h1.5V1h-1.5zm.75.75c10.631 0 19.25 8.618 19.25 19.25h1.5C38.75 9.54 29.46.25 18 .25v1.5zm1 20h11.778v-1.5H19v1.5zm11.778 0H38v-1.5h-7.222v1.5zM17.25 20c0 .966.784 1.75 1.75 1.75v-1.5a.25.25 0 01-.25-.25h-1.5z"
+                      fill="#11C095"
+                    ></path>
+                  </g>
+                </svg>
+                <div class="ml-4">
+                  {" "}
+                  <h5 class="font-semibold pt-3 md:pt-0">Fund Selection</h5>
+                  <p class="text-textgrey font-thin text-sm  pt-1">
+                    You'll never have to worry about what funds to choose. We'll
+                    suggest what's best for you.
+                  </p>
+                </div>
+              </div>
+              <div class="max-w-xs text-center md:flex md:text-left md:items-start md:max-w-4xl md:pt-10">
+                <svg
+                  class="w-10 h-10 mx-auto"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 41 40"
+                  id="cup"
+                >
+                  <path
+                    d="M10.1 19.355H8.8a5.22 5.22 0 01-3.677-1.512 5.142 5.142 0 01-1.523-3.65V3.872h6.5M30.9 19.355h1.3a5.22 5.22 0 003.677-1.512 5.142 5.142 0 001.523-3.65V3.872h-6.5M20.5 33.548v-7.742"
+                    stroke="#B77A0A"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                  ></path>
+                  <path
+                    d="M20.5 25.806a11.745 11.745 0 01-8.273-3.4A11.57 11.57 0 018.8 14.193V1.29h23.4v12.904c0 1.524-.303 3.035-.89 4.444a11.608 11.608 0 01-2.537 3.767 11.706 11.706 0 01-3.796 2.517c-1.42.584-2.94.884-4.477.884z"
+                    fill="#FFE1A8"
+                    stroke="#B77A0A"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="square"
+                  ></path>
+                  <path
+                    d="M20.31 9.032v3.871M16.6 11.707l3.709 1.196M18.017 16.035l2.292-3.132M22.601 16.035l-2.292-3.132M24.018 11.707l-3.709 1.196"
+                    stroke="#B77A0A"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M32.2 38.71H8.8c0-1.711-.267-3.952 1.3-5.162 1.567-1.21 4.84-1.29 7.057-1.29h6.686c2.195 0 5.505.092 7.057 1.29 1.552 1.199 1.3 3.467 1.3 5.162z"
+                    fill="#FFE1A8"
+                    stroke="#B77A0A"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="square"
+                  ></path>
+                </svg>{" "}
+                <div class="ml-4">
+                  {" "}
+                  <h5 class="font-semibold pt-3 md:pt-0 ">
+                    Continuous monitoring & alerts
+                  </h5>
+                  <p class="text-textgrey font-thin text-sm  pt-1">
+                    We will track our recommendations and suggest changes & fund
+                    exists whenever required.
+                  </p>
+                </div>
+              </div>
+              <div class="max-w-xs text-center md:flex md:text-left md:items-start md:max-w-4xl lg:pt-10">
+                <svg
+                  class="w-10 h-10 mx-auto"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 41 40"
+                  id="archery-target"
+                >
+                  <g
+                    clip-path="url(#anclip0)"
+                    stroke="#007AFF"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                  >
+                    <path
+                      d="M16.5 39c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15-8.284 0-15 6.716-15 15 0 8.284 6.716 15 15 15z"
+                      fill="#fff"
+                      stroke-linecap="square"
+                    ></path>
+                    <path
+                      d="M16.5 32a8 8 0 100-16 8 8 0 000 16z"
+                      fill="#CBE3F6"
+                      stroke-linecap="square"
+                    ></path>
+                    <path
+                      d="M16.5 25a1 1 0 100-2 1 1 0 000 2z"
+                      fill="#fff"
+                      stroke-linecap="square"
+                    ></path>
+                    <path d="M16.75 23.75l20-20"></path>
+                    <path
+                      d="M31.75 8.75L30.5 2.5l-5 5 1.25 6.25L33 15l5-5-6.25-1.25z"
+                      fill="#CBE3F6"
+                      stroke-linecap="square"
+                    ></path>
+                  </g>
+                </svg>{" "}
+                <div class="ml-4">
+                  {" "}
+                  <h5 class="font-semibold pt-3 md:pt-0 ">
+                    All week call assistance
+                  </h5>
+                  <p class="text-textgrey font-thin text-sm  pt-1">
+                    Our customer champions are available 7 days a week from 8AM
+                    to 8PM.
+                  </p>
+                </div>
+              </div>
+              <div class="max-w-xs text-center md:flex md:text-left md:items-start md:max-w-4xl lg:pt-10">
+                <svg
+                  class="w-10 h-10 mx-auto"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 41 40"
+                  id="savings"
+                >
+                  <path
+                    d="M17.22 21.521c-2.03 1.988-4.648 3.086-7.36 3.086-2.711 0-5.33-1.098-7.36-3.086 1.609-1.57 3.593-2.595 5.715-2.948a10.175 10.175 0 016.245.956c1.956.978 3.614 2.56 4.777 4.555 1.163 1.996 1.78 4.32 1.777 6.695"
+                    fill="#fff"
+                  ></path>
+                  <path
+                    d="M17.22 21.521c-2.03 1.988-4.648 3.086-7.36 3.086-2.711 0-5.33-1.098-7.36-3.086 1.609-1.57 3.593-2.595 5.715-2.948a10.175 10.175 0 016.245.956c1.956.978 3.614 2.56 4.777 4.555 1.163 1.996 1.78 4.32 1.777 6.695"
+                    stroke="#1C9778"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                  ></path>
+                  <path
+                    d="M23.78 21.521c2.03 1.988 4.648 3.086 7.36 3.086 2.711 0 5.329-1.098 7.36-3.086-1.609-1.57-3.593-2.595-5.715-2.948a10.175 10.175 0 00-6.245.956c-1.956.978-3.614 2.56-4.777 4.555-1.163 1.996-1.78 4.32-1.777 6.695"
+                    fill="#fff"
+                  ></path>
+                  <path
+                    d="M23.78 21.521c2.03 1.988 4.648 3.086 7.36 3.086 2.711 0 5.329-1.098 7.36-3.086-1.609-1.57-3.593-2.595-5.715-2.948a10.175 10.175 0 00-6.245.956c-1.956.978-3.614 2.56-4.777 4.555-1.163 1.996-1.78 4.32-1.777 6.695"
+                    stroke="#1C9778"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                  ></path>
+                  <path
+                    d="M20.602 16.636a7.714 7.714 0 100-15.429 7.714 7.714 0 000 15.429z"
+                    fill="#FEFCBF"
+                    stroke="#1C9778"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="square"
+                  ></path>
+                  <path
+                    d="M20.602 16.893v6.685M20.602 6.607v4.629"
+                    stroke="#1C9778"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="square"
+                  ></path>
+                  <path
+                    d="M8.773 28.464H32.43l-1.067 8.534a2 2 0 01-1.984 1.752H11.824a2 2 0 01-1.984-1.752l-1.067-8.534z"
+                    fill="#B6F1E0"
+                    stroke="#1C9778"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="square"
+                  ></path>
+                </svg>{" "}
+                <div class="ml-4">
+                  {" "}
+                  <h5 class="font-semibold pt-3 md:pt-0 ">
+                    Annual reviews & rebalances
+                  </h5>
+                  <p class="text-textgrey font-thin text-sm  pt-1">
+                    We review your investments and make course corrections every
+                    year to make the best out of your investments
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

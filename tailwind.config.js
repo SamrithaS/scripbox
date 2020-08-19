@@ -54,10 +54,14 @@ module.exports = {
         'bgyellow2':'#fbe5bb',
         'bgblue3':'#8cc6f1',
         'bggreen2':'#008088',
-        'bgviolet':'#553c9a'
+        'bgviolet':'#553c9a',
+        'lightgreen':'#b6f1e0',
+        'bgclr':'#f9f8f3'
+       
       },
       width: {
                '64': '28rem',
+               '102':'17rem'
                 },
                 height: {
                   '6':'2px',
