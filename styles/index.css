@@ -8,9 +8,11 @@
 
 /* Write you own custom component styles here */
 .btn-blue {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
 }
-
+.slider-thumb::-webkit-slider-thumb {
+  @apply w-8 h-8 bg-white rounded-full shadow-sm appearance-none cursor-pointer;
+}
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */

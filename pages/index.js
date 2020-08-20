@@ -307,7 +307,7 @@ export default function IndexPage() {
                   min="200"
                   max="10000"
                   value={val}
-                  class="w-102"
+                  class="w-110 appearance-none bg-blue-500 h-3 rounded-full slider-thumb"
                   id="myRange"
                   onChange={e => {
                     setval(e.target.value);
@@ -367,12 +367,12 @@ export default function IndexPage() {
             </div>
           </div>
           <div class="col-span-7 pl-6 lg:pl-0 lg:col-span-10 mb-12 ">
-            <div class="flex justify-between items-center text-fontgrey">
-              <p>Showing 20 of 126 funds</p>{" "}
+            <div class="flex justify-between items-center text-fontgrey lg:overflow-x-scroll lg:space-x-3">
+              <p class="lg:hidden">Showing 20 of 126 funds</p>{" "}
               <div class="flex items-center">
-                <p class="text-fontgrey text-xs pr-4">Sort by </p>
+                <p class="text-fontgrey text-xs pr-4 lg:hidden">Sort by </p>
 
-                <select class="bg-white py-2 px-4 shadow-sm rounded-md">
+                <select class="bg-white py-2 px-4 shadow-sm rounded-md lg:flex-shrink-0 ">
                   <option value="audi" selected>
                     Recommended{" "}
                   </option>
@@ -382,9 +382,230 @@ export default function IndexPage() {
                   <option value="vw">Consistency</option>
                 </select>
               </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
+              <div class=" lg:space-x-1 lg:flex hidden px-2  lg:my-2 py-2 lg:flex-shrink-0 items-center shadow-sm bg-white rounded-md">
+                <p class="text-sm">Tata Mutual Fund</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 12 12"
+                  id="close-icon-gray"
+                  class="w-3 h-3"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.433 2.44a.624.624 0 01.883 0l2.68 2.684 2.68-2.683a.624.624 0 11.883.884L6.88 6.008l2.68 2.683a.625.625 0 01-.882.884L5.997 6.89 3.315 9.575a.624.624 0 01-.883-.884l2.68-2.683-2.68-2.683a.625.625 0 010-.884z"
+                    fill="#737373"
+                  ></path>
+                </svg>{" "}
+              </div>
             </div>
             <div class="bg-white shadow-md rounded-md px-3 py-3 mt-4 mb-6">
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2  hover:text-bgblue flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -431,8 +652,8 @@ export default function IndexPage() {
                       stroke-width=".5"
                     ></path>
                   </svg>
-                  <div class="pl-4">
-                    <p class="pb-2">Mirae Asset Large Cap Growth</p>
+                  <div class="pl-4 ">
+                    <p class="pb-2 ">Mirae Asset Large Cap Growth</p>
                     <div class="flex space-x-4">
                       <span class="text-fontgrey text-sm font-thin">
                         Large Cap
@@ -448,7 +669,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex lg:hidden items-center space-x-4 ">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -497,7 +718,7 @@ export default function IndexPage() {
                 </div>
               </div>
 
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -571,6 +792,7 @@ export default function IndexPage() {
                       ></rect>
                     </svg>
                   </div>
+
                   <div class="flex lg:hidden space-x-5 pt-1">
                     <span class="lg:hidden text-fontgrey font-thin text-sm">
                       Fund Size
@@ -579,7 +801,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -612,7 +834,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex lg:hidden items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -660,7 +882,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -694,7 +916,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex lg:hidden items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -742,7 +964,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -806,7 +1028,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex lg:hidden items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -854,7 +1076,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -886,7 +1108,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex  lg:hidden items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -934,7 +1156,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -967,7 +1189,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex lg:hidden items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -1015,7 +1237,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -1049,7 +1271,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex lg:hidden items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -1098,7 +1320,7 @@ export default function IndexPage() {
                 </div>
               </div>
 
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -1162,7 +1384,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex lg:hidden items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -1210,7 +1432,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -1274,7 +1496,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex lg:hidden items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -1516,7 +1738,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -1548,7 +1770,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -1596,7 +1818,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -1628,7 +1850,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -1676,7 +1898,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -1707,7 +1929,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -1755,7 +1977,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -1786,7 +2008,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -1834,7 +2056,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -1866,7 +2088,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -1914,7 +2136,7 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey">
+              <div class="px-2 flex items-center justify-between hover:shadow-md rounded-md py-4 cursor-pointer border-b border-bgdarkgrey hover:text-bgblue">
                 <div class="flex items-center">
                   <div class="h-12 w-1 bg-orange rounded-md mr-3"></div>
                   <svg
@@ -1946,7 +2168,7 @@ export default function IndexPage() {
                 </div>
                 <div>
                   <div class="flex items-center space-x-4">
-                    <span class="pr-2 lg:hidden">1,400 Cr</span>
+                    <span class="pr-2 text-black lg:hidden">1,400 Cr</span>
                     <svg
                       class="sparkline-growth"
                       width="64"
@@ -1996,41 +2218,41 @@ export default function IndexPage() {
               </div>
             </div>
             <div class="flex mb-4 justify-between items-center">
-              <button class="px-3 py-2 bg-white shadow-md rounded-md text-fontgrey text-sm">
+              <button class="px-3 py-2 bg-white shadow-md rounded-md text-fontgrey text-sm hover:bg-hoverbg">
                 Previous
               </button>
-              <ul class="flex space-x-6 shadow-md rounded-md bg-white lg:hidden">
+              <ul class="flex  shadow-md rounded-md bg-white lg:hidden">
                 {" "}
-                <a href="#" class="">
-                  <li class=" pl-3 py-2 ">1</li>
+                <a href="#" class="hover:bg-hoverbg">
+                  <li class=" px-4 py-2  ">1</li>
                 </a>
-                <a href="#" class="">
-                  <li class=" pl-3 py-2 border-l border-bgdarkgrey">2</li>
+                <a href="#" class="hover:bg-hoverbg">
+                  <li class=" px-4 py-2  border-l border-bgdarkgrey">2</li>
                 </a>
-                <a href="#" class="">
-                  <li class=" pl-3 py-2 border-l border-bgdarkgrey">3</li>
+                <a href="#" class="hover:bg-hoverbg">
+                  <li class=" px-4 py-2  border-l border-bgdarkgrey">3</li>
                 </a>
-                <a href="#" class=" ">
-                  <li class=" pl-3 py-2 border-l border-bgdarkgrey">4</li>
+                <a href="#" class=" hover:bg-hoverbg">
+                  <li class=" px-4 py-2  border-l border-bgdarkgrey">4</li>
                 </a>
-                <a href="#" class="">
-                  <li class=" pl-3 py-2 border-l border-bgdarkgrey">5</li>
+                <a href="#" class="hover:bg-hoverbg">
+                  <li class=" px-4 py-2  border-l border-bgdarkgrey">5</li>
                 </a>
-                <a href="#" class="">
-                  <li class=" pl-3 py-2 border-l border-bgdarkgrey">6</li>
+                <a href="#" class="hover:bg-hoverbg">
+                  <li class=" px-4 py-2  border-l border-bgdarkgrey">6</li>
                 </a>
-                <a href="#" class="">
-                  <li class=" pl-3 py-2 pr-3 border-l border-bgdarkgrey">7</li>
+                <a href="#" class="hover:bg-hoverbg">
+                  <li class=" px-4 py-2  pr-3 border-l border-bgdarkgrey">7</li>
                 </a>
               </ul>
-              <button class="px-3 py-2 bg-white shadow-md rounded-md text-fontgrey text-sm">
+              <button class="px-3 py-2 bg-white shadow-md rounded-md text-fontgrey text-sm hover:bg-hoverbg">
                 Next
               </button>
             </div>{" "}
           </div>
         </div>
       </section>
-      <section class="bg-lightblue pb-20 sm:pb-6">
+      <section class="bg-lightblue pb-20 sm:pb-4 lg:pb-5">
         <div class="max-w-6xl mx-auto lg:pr-2 pt-20 lg:pt-10 flex pl-2 justify-between items-start content-start flex-wrap  lg:max-w-2xl">
           <div class="lg:order-2">
             <div class="lg:hidden">
@@ -2076,9 +2298,15 @@ export default function IndexPage() {
                 that make a recommendation or top ranking
               </p>
             </div>
+            <div class="hidden lg:block bg-bgblue1 text-center mt-8 mb-6 px-1 py-3 w-56 mx-auto rounded-md text-sm text-fontgrey">
+              <a href="" class="bg-white px-3 py-2 rounded-md mr-1">
+                Equity Funds{" "}
+              </a>
+              <a href="">Debt Funds</a>
+            </div>
             <div class="max-w-xl flex lg:mx-auto ">
-              <div class="shadow-lg bg-white rounded-b-md pl-3">
-                <div class="pr-1 pt-4  pb-5  pl-3 md:pr-0">
+              <div class="shadow-lg bg-white rounded-l-md ">
+                <div class="pt-4  pb-5  pl-4 lg:pr-8 md:pr-0 sm:pr-4">
                   <svg
                     class="w-8 h-8 sm:hidden"
                     xmlns="http://www.w3.org/2000/svg"
@@ -2130,7 +2358,7 @@ export default function IndexPage() {
                     our analysis
                   </p>
                 </div>
-                <div class="pr-3 pt-4 pl-3  pb-5">
+                <div class="pt-4 pl-3 pb-5 lg:pr-0 border-t border-bggrey">
                   <svg
                     class="w-8 h-8 sm:hidden"
                     xmlns="http://www.w3.org/2000/svg"
@@ -2167,8 +2395,8 @@ export default function IndexPage() {
                 </div>
               </div>
 
-              <div class="pl-4 bg-white shadow-lg rounded-b-md">
-                <div class="pt-4">
+              <div class=" bg-white shadow-lg rounded-r-md">
+                <div class="pt-4 pl-4 pb-5">
                   <svg
                     class="w-8 h-8 sm:hidden"
                     xmlns="http://www.w3.org/2000/svg"
@@ -2203,7 +2431,7 @@ export default function IndexPage() {
                   </p>
                 </div>
 
-                <div class="pt-8 ">
+                <div class=" pl-4 pt-4 border-t border-bggrey ">
                   <svg
                     class="w-8 h-8 sm:hidden"
                     xmlns="http://www.w3.org/2000/svg"
@@ -2243,16 +2471,16 @@ export default function IndexPage() {
                 </div>
               </div>
             </div>
-            <div class="bg-bgblue1 text-center mt-8  px-3 py-3 w-56 mx-auto rounded-md text-sm text-fontgrey">
+            <div class=" lg:hidden bg-bgblue1 text-center mt-8  px-1 py-3 w-56 mx-auto rounded-md text-sm text-fontgrey">
               <a href="" class="bg-white px-3 py-2 rounded-md mr-1">
                 Equity Funds{" "}
               </a>
-              Debt Funds
+              <a href="">Debt Funds</a>
             </div>
           </div>
         </div>
       </section>
-      <section class="bg-gray pb-20 sm:pb-8">
+      <section class="bg-gray pb-20 sm:pb-4">
         <div class="max-w-6xl mx-auto py-5 pt-16 lg:pl-2">
           <h2 class="text-3xl font-semibold text-center sm:text-xl">
             How to invest in best mutual funds with Scripbox
@@ -2261,8 +2489,8 @@ export default function IndexPage() {
             Investing through Scripbox is made easy and paperless. All you need
             to do is follow the below steps and start investing.
           </p>
-          <div class="flex pt-8 space-x-6 lg:overflow-x-scroll">
-            <div class="max-w-xs rounded-md shadow-lg lg:flex-shrink-0">
+          <div class="flex pt-8 space-x-6 lg:pb-4 lg:overflow-x-scroll">
+            <div class="max-w-xs rounded-md shadow-lg lg:flex-shrink-0 bg-white">
               <div class="bg-bgyellow2  rounded-t-md">
                 <svg
                   class="w-48 h-32 mx-auto "
@@ -2352,7 +2580,7 @@ export default function IndexPage() {
                 </p>
               </div>
             </div>
-            <div class="max-w-xs rounded-md shadow-lg lg:flex-shrink-0">
+            <div class="max-w-xs rounded-md shadow-lg lg:flex-shrink-0 bg-white">
               <div class="bg-bgblue3  rounded-t-md py-8">
                 <svg
                   class="w-20 h-16 mx-auto "
@@ -2416,7 +2644,7 @@ export default function IndexPage() {
                 </p>
               </div>
             </div>
-            <div class="max-w-xs rounded-md shadow-lg lg:flex-shrink-0">
+            <div class="max-w-xs rounded-md shadow-lg lg:flex-shrink-0 bg-white">
               <div class="bg-bggreen2  rounded-t-md py-8">
                 <svg
                   class="w-16 h-16 mx-auto"
@@ -2464,7 +2692,7 @@ export default function IndexPage() {
                 </p>
               </div>
             </div>
-            <div class="max-w-xs rounded-md shadow-lg lg:flex-shrink-0">
+            <div class="max-w-xs rounded-md shadow-lg lg:flex-shrink-0 bg-white">
               <div class="bg-bgviolet rounded-t-md py-8">
                 <svg
                   class="w-16 h-16 mx-auto"
@@ -2638,7 +2866,7 @@ export default function IndexPage() {
               </p>
             </div>
             <div class="flex pt-12 justify-between space-x-4 md:flex-wrap md:space-x-0">
-              <div class="max-w-xlmd:max-w-xl ">
+              <div class="max-w-xl md:max-w-2xl ">
                 <h3 class="font-semibold pb-3 text-lg">Investment Objective</h3>
                 <p class="text-sm  font-thin text-textgrey pb-3">
                   An investor should first sort out his personal life goals and
@@ -2658,7 +2886,7 @@ export default function IndexPage() {
                   information document and scheme information document.
                 </p>
               </div>
-              <div class="max-w-xl pl-8 md:pl-0 md:max-w-xl md:pt-4 ">
+              <div class="max-w-xl pl-8 md:pl-0 md:max-w-2xl md:pt-4 ">
                 <h3 class="font-semibold pb-3 text-lg">Fund History</h3>
                 <p class="text-sm font-thin text-textgrey pb-3">
                   The fund history is the track record of the fund’s performance
@@ -2682,7 +2910,7 @@ export default function IndexPage() {
               </div>
             </div>
             <div class="flex pt-12 justify-between space-x-4 md:flex-wrap md:space-x-0 md:pt-4">
-              <div class="max-w-xl pr-6 lg:pr-0 md:max-w-xl ">
+              <div class="max-w-xl pr-6 lg:pr-0 md:max-w-2xl ">
                 <h3 class="font-semibold pb-3 text-lg">Expense Ratio</h3>
                 <p class="text-sm font-thin text-textgrey pb-3">
                   An annual fee is charged by the fund house manager for
@@ -2698,7 +2926,7 @@ export default function IndexPage() {
                   funds in the category
                 </p>
               </div>
-              <div class="max-w-xl md:max-w-xl md:pt-4 ">
+              <div class="max-w-xl md:max-w-2xl md:pt-4 ">
                 <h3 class="font-semibold pb-3 text-lg">
                   Performance of fund manager
                 </h3>
