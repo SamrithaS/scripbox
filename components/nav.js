@@ -28,19 +28,20 @@ export default function Nav() {
             </g>
           </svg>
         </li>
-        <ul className="flex items-center justify-between space-x-10 sm:space-x-6 sm:hidden">
-          <li className="px-3 py-1 rounded-md cursor-pointer hover:bg-hoverorange ">
-            <a href="tel:1800-102-1265" class="">
-              <span class="text-white text-sm">1800-102-1265</span>
+        <ul className="flex items-center justify-between space-x-10 sm:space-x-0 ">
+          <li className="px-3 py-1 rounded-md cursor-pointer hover:bg-hoverorange sm:hover:bg-orange sm:px-0">
+            <a href="tel:1800-102-1265" class="flex items-center">
+            <svg class="w-8 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" id="tel-icon"><path d="M2.294.737a1 1 0 011.413 0l2.577 2.58a.998.998 0 010 1.41l-1.96 1.958a.47.47 0 000 .665l4.33 4.325a.472.472 0 00.665 0l1.956-1.954a.999.999 0 011.415.002l2.575 2.589a.997.997 0 01-.002 1.41l-1.695 1.693a1.849 1.849 0 01-1.414.559C5.78 15.574.654 10.579.058 4.269c-.075-.792.258-1.557.821-2.12L2.294.738zM8 0c4.411 0 8 3.589 8 8h-2c0-3.309-2.691-6-6-6V0z" fill="#fff"></path></svg>
+              <span class="text-white text-sm sm:hidden">1800-102-1265</span>
             </a>
           </li>
-          <li className="px-3 py-1 text-sm text-white rounded-md cursor-pointer hover:bg-hoverorange">
+          <li className="px-3 py-1 text-sm text-white rounded-md cursor-pointer sm:hidden hover:bg-hoverorange">
             Blog
           </li>
-          <li className="px-3 py-1 text-sm text-white rounded-md cursor-pointer hover:bg-hoverorange">
+          <li className="px-3 py-1 text-sm text-white rounded-md cursor-pointer sm:hidden hover:bg-hoverorange">
             Login
           </li>
-          <li className="p-1 px-3 text-sm bg-white rounded-md cursor-pointer text-orange">
+          <li className="p-1 px-3 text-sm bg-white rounded-md cursor-pointer sm:hidden text-orange">
             Signup
           </li>
         </ul>
