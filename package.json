@@ -10,7 +10,9 @@
     "axios": "^0.20.0",
     "next": "latest",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-query": "^2.15.4",
+    "react-query-devtools": "^2.4.7"
   },
   "devDependencies": {
     "postcss-flexbugs-fixes": "4.2.1",
