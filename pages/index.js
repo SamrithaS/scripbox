@@ -268,9 +268,19 @@ function IndexPage() {
                       type="checkbox"
                       id="12"
                       onClick={() => {
-                        filter == "basic"
-                          ? setFilterclick("Recommended")
-                          : setFilterclick("Low");
+                        if (filter == "basic") {
+                          filterclick.indexOf(" Recommended") !== -1
+                            ? setFilterclick(
+                                filterclick.replace(" Recommended", "")
+                              )
+                            : setFilterclick(
+                                filterclick.concat(" Recommended")
+                              );
+                        } else {
+                          filterclick.indexOf(" Low") !== -1
+                            ? setFilterclick(filterclick.replace(" Low", ""))
+                            : setFilterclick(filterclick.concat(" Low"));
+                        }
                       }}
                     />
                     <label
@@ -296,9 +306,17 @@ function IndexPage() {
                 <li class="hover:bg-hoverbg flex justify-between items-center pb-2">
                   <div
                     onClick={() => {
-                      filter == "basic"
-                        ? setFilterclick("Top Ranked")
-                        : setFilterclick("Medium");
+                      if (filter == "basic") {
+                        filterclick.indexOf(" Top Ranked") !== -1
+                          ? setFilterclick(
+                              filterclick.replace(" Top Ranked", "")
+                            )
+                          : setFilterclick(filterclick.concat(" Top Ranked"));
+                      } else {
+                        filterclick.indexOf(" Medium") !== -1
+                          ? setFilterclick(filterclick.replace(" Medium", ""))
+                          : setFilterclick(filterclick.concat(" Medium"));
+                      }
                     }}
                   >
                     <input type="checkbox" id="13" />
@@ -324,9 +342,19 @@ function IndexPage() {
                 <li class="hover:bg-hoverbg flex justify-between items-center pb-2">
                   <div
                     onClick={() => {
-                      filter == "basic"
-                        ? setFilterclick("Not Recommended")
-                        : setFilterclick("High");
+                      if (filter == "basic") {
+                        filterclick.indexOf(" Not Recommended") !== -1
+                          ? setFilterclick(
+                              filterclick.replace(" Not Recommended", "")
+                            )
+                          : setFilterclick(
+                              filterclick.concat(" Not Recommended")
+                            );
+                      } else {
+                        filterclick.indexOf(" High") !== -1
+                          ? setFilterclick(filterclick.replace(" High", ""))
+                          : setFilterclick(filterclick.concat(" High"));
+                      }
                     }}
                   >
                     <input type="checkbox" id="14" />
@@ -360,14 +388,16 @@ function IndexPage() {
                     <input
                       type="checkbox"
                       id="15"
-                      onClick={e => {
+                      onClick={() => {
                         if (filter == "basic") {
-                          filterclick == " Equity"
-                            ? setFilterclick("")
+                          filterclick.indexOf(" Equity") !== -1
+                            ? setFilterclick(filterclick.replace(" Equity", ""))
                             : setFilterclick(filterclick.concat(" Equity"));
                         } else {
-                          filterclick == " Divided Payout"
-                            ? setFilterclick("")
+                          filterclick.indexOf(" Divided Payout") !== -1
+                            ? setFilterclick(
+                                filterclick.replace(" Divided Payout", "")
+                              )
                             : setFilterclick(
                                 filterclick.concat(" Divided Payout")
                               );
@@ -392,14 +422,16 @@ function IndexPage() {
                     <input
                       type="checkbox"
                       id="16"
-                      onClick={e => {
+                      onClick={() => {
                         if (filter == "basic") {
-                          filterclick == " Debt"
-                            ? setFilterclick("")
+                          filterclick.indexOf(" Debt") !== -1
+                            ? setFilterclick(filterclick.replace(" Debt", ""))
                             : setFilterclick(filterclick.concat(" Debt"));
                         } else {
-                          filterclick == "Divided Reinvestment"
-                            ? setFilterclick("")
+                          filterclick.indexOf(" Divided Reinvestment") !== -1
+                            ? setFilterclick(
+                                filterclick.replace(" Divided Reinvestment", "")
+                              )
                             : setFilterclick(
                                 filterclick.concat(" Divided Reinvestment")
                               );
@@ -424,14 +456,16 @@ function IndexPage() {
                     <input
                       type="checkbox"
                       id="17"
-                      onClick={e => {
+                      onClick={() => {
                         if (filter == "basic") {
-                          filterclick == " Hybrid"
-                            ? setFilterclick("")
+                          filterclick.indexOf(" Hybrid") !== -1
+                            ? setFilterclick(filterclick.replace(" Hybrid", ""))
                             : setFilterclick(filterclick.concat(" Hybrid"));
                         } else {
-                          filterclick == " Reinvestment"
-                            ? setFilterclick("")
+                          filterclick.indexOf(" Reinvestment") !== -1
+                            ? setFilterclick(
+                                filterclick.replace(" Reinvestment", "")
+                              )
                             : setFilterclick(
                                 filterclick.concat(" Reinvestment")
                               );
@@ -463,8 +497,8 @@ function IndexPage() {
                       id="22"
                       onClick={() => {
                         if (filter == "basic") {
-                          filterclick == " Others"
-                            ? setFilterclick("")
+                          filterclick.indexOf(" Others") !== -1
+                            ? setFilterclick(filterclick.replace(" Others", ""))
                             : setFilterclick(filterclick.concat(" Others"));
                         } else setFilterclick("");
                       }}
@@ -504,7 +538,7 @@ function IndexPage() {
                     { hidden: filter != "basic" }
                   )}
                   id="myRange"
-                  onChange={e => {
+                  onChange={(e) => {
                     setval(e.target.value);
                     console.log(e);
                   }}
@@ -528,8 +562,10 @@ function IndexPage() {
                         id="3"
                         onClick={() => {
                           if (filter != "basic") {
-                            filterclick == " Divided Payout"
-                              ? setFilterclick("")
+                            filterclick.indexOf(" Divided Payout") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(" Divided Payout", "")
+                                )
                               : setFilterclick(
                                   filterclick.concat(" Divided Payout")
                                 );
@@ -556,8 +592,10 @@ function IndexPage() {
                         id="4"
                         onClick={() => {
                           if (filter != "basic") {
-                            filterclick == " Large Cap"
-                              ? setFilterclick("")
+                            filterclick.indexOf(" Large Cap") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(" Large Cap", "")
+                                )
                               : setFilterclick(
                                   filterclick.concat(" Large Cap")
                                 );
@@ -589,8 +627,10 @@ function IndexPage() {
                         id="5"
                         onClick={() => {
                           if (filter != "basic") {
-                            filterclick == " Mid Cap"
-                              ? setFilterclick("")
+                            filterclick.indexOf(" Mid Cap") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(" Mid Cap", "")
+                                )
                               : setFilterclick(filterclick.concat(" Mid Cap"));
                           } else setFilterclick("");
                         }}
@@ -620,8 +660,10 @@ function IndexPage() {
                         id="6"
                         onClick={() => {
                           if (filter != "basic") {
-                            filterclick == " Small Cap"
-                              ? setFilterclick("")
+                            filterclick.indexOf(" Small Cap") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(" Small Cap", "")
+                                )
                               : setFilterclick(
                                   filterclick.concat(" Small Cap")
                                 );
@@ -653,8 +695,13 @@ function IndexPage() {
                         id="7"
                         onClick={() => {
                           if (filter != "basic") {
-                            filterclick == " Sectoral / Thematic"
-                              ? setFilterclick("")
+                            filterclick.indexOf(" Sectoral / Thematic") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(
+                                    " Sectoral / Thematic",
+                                    ""
+                                  )
+                                )
                               : setFilterclick(
                                   filterclick.concat(" Sectoral / Thematic")
                                 );
@@ -684,13 +731,21 @@ function IndexPage() {
                   <div
                     onClick={() => {
                       filter == "basic"
-                        ? filterclick == " Aditya Birla Mutual Fund"
-                          ? setFilterclick("")
-                          : setFilterclick(
-                              filterclick.concat(" Below 500 Crores")
+                        ? filterclick.indexOf(" Aditya Birla Mutual Fund") !==
+                          -1
+                          ? setFilterclick(
+                              filterclick.replace(
+                                " Aditya Birla Mutual Fund",
+                                ""
+                              )
                             )
-                        : filterclick == " Below 500 Crores"
-                        ? setFilterclick("")
+                          : setFilterclick(
+                              filterclick.concat(" Aditya Birla Mutual Fund")
+                            )
+                        : filterclick.indexOf(" Below 500 Crores") !== -1
+                        ? setFilterclick(
+                            filterclick.replace(" Below 500 Crores", "")
+                          )
                         : setFilterclick(
                             filterclick.concat(" Below 500 Crores")
                           );
@@ -716,13 +771,17 @@ function IndexPage() {
                   <div
                     onClick={() => {
                       filter == "basic"
-                        ? filterclick == " HDFC Mutual Fund"
-                          ? setFilterclick("")
+                        ? filterclick.indexOf(" HDFC Mutual Fund") !== -1
+                          ? setFilterclick(
+                              filterclick.replace(" HDFC Mutual Fund", "")
+                            )
                           : setFilterclick(
                               filterclick.concat(" HDFC Mutual Fund")
                             )
-                        : filterclick == "500 - 1000 Crores"
-                        ? setFilterclick("")
+                        : filterclick.indexOf("500 - 1000 Crores") !== -1
+                        ? setFilterclick(
+                            filterclick.replace("500 - 1000 Crores", "")
+                          )
                         : setFilterclick(
                             filterclick.concat(" 500 - 1000 Crores")
                           );
@@ -785,8 +844,10 @@ function IndexPage() {
                   <div
                     onClick={() => {
                       filter == "basic"
-                        ? filterclick == " Tata Mutual Fund"
-                          ? setFilterclick("")
+                        ? filterclick.indexOf(" Tata Mutual Fund") !== -1
+                          ? setFilterclick(
+                              filterclick.replace(" Tata Mutual Fund", "")
+                            )
                           : setFilterclick(
                               filterclick.concat(" Tata Mutual Fund")
                             )
@@ -816,7 +877,7 @@ function IndexPage() {
                     <input
                       class="h-8 rounded-md shadow-sm p-1 mr-3 mt-3 border-t-1 border-bgdarkgrey"
                       placeholder="search"
-                      onChange={e => {
+                      onChange={() => {
                         console.log(e.target.value);
                         setFilterclick(e.target.value);
                       }}
