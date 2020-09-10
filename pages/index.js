@@ -3,6 +3,7 @@ import { ReactQueryDevtools } from "react-query-devtools";
 import { useQuery } from "react-query";
 import React, { useState, useEffect } from "react";
 const axios = require("axios").default;
+import Pagination from "react-js-pagination";
 import cx from "classnames";
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
 function IndexPage() {
   const [val, setval] = useState(5000);
   const [toggle, setToggle] = useState("Equity");
+  const [activePage, setActivePage] = useState(1);
   const [filter, setFilter] = useState("basic");
   const [startValue, setStartValue] = useState(0);
   const [filterclick, setFilterclick] = useState("");
@@ -263,120 +265,185 @@ function IndexPage() {
               </h3>
               <ul class="pt-2 pb-2 border-b border-bgdarkgrey">
                 <li class="hover:bg-hoverbg flex justify-between items-center pb-2">
-                  <div>
-                    <input
-                      type="checkbox"
-                      id="12"
-                      onClick={() => {
-                        if (filter == "basic") {
-                          filterclick.indexOf(" Recommended") !== -1
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="12"
+                          onClick={() => {
+                            filterclick.indexOf(" Recommended") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(" Recommended", "")
+                                )
+                              : setFilterclick(
+                                  filterclick.concat(" Recommended")
+                                );
+                          }}
+                        />
+                        <label
+                          for="12"
+                          class={cx(
+                            "font-thin ml-3 text-sm",
+                            { "text-orange bg-bgorange": filter == "basic" },
+                            { "text-fontgrey font-thin": filter != "basic" }
+                          )}
+                        >
+                          {"Recommended"}
+                        </label>
+                      </div>
+                      <span
+                        class={cx(
+                          "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                          { hidden: filter != "basic" }
+                        )}
+                      >
+                        24
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="12"
+                          onClick={() => {
+                            filterclick.indexOf(" Low") !== -1
+                              ? setFilterclick(filterclick.replace(" Low", ""))
+                              : setFilterclick(filterclick.concat(" Low"));
+                          }}
+                        />
+                        <label
+                          for="12"
+                          class={cx(
+                            "font-thin ml-3 text-sm",
+                            { "text-orange bg-bgorange": filter == "basic" },
+                            { "text-fontgrey font-thin": filter != "basic" }
+                          )}
+                        >
+                          {"Low"}
+                        </label>
+                      </div>
+                    </>
+                  )}
+                </li>
+                <li class="hover:bg-hoverbg flex justify-between items-center pb-2">
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div
+                        onClick={() => {
+                          filterclick.indexOf(" Top Ranked") !== -1
                             ? setFilterclick(
-                                filterclick.replace(" Recommended", "")
+                                filterclick.replace(" Top Ranked", "")
+                              )
+                            : setFilterclick(filterclick.concat(" Top Ranked"));
+                        }}
+                      >
+                        <input type="checkbox" id="13" />
+                        <label
+                          for="13"
+                          class={cx(
+                            "ml-3 font-thin text-sm",
+                            { "text-green bg-bggreen": filter == "basic" },
+                            { "text-fontgrey font-thin": filter != "basic" }
+                          )}
+                        >
+                          {"Top Ranked"}
+                        </label>
+                      </div>
+                      <span
+                        class={cx(" bg-bggrey px-2 rounded-sm text-xs ", {
+                          hidden: filter != "basic"
+                        })}
+                      >
+                        24
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div
+                        onClick={() => {
+                          filterclick.indexOf(" Medium") !== -1
+                            ? setFilterclick(filterclick.replace(" Medium", ""))
+                            : setFilterclick(filterclick.concat(" Medium"));
+                        }}
+                      >
+                        <input type="checkbox" id="13" />
+                        <label
+                          for="13"
+                          class={cx(
+                            "ml-3 font-thin text-sm",
+                            { "text-green bg-bggreen": filter == "basic" },
+                            { "text-fontgrey font-thin": filter != "basic" }
+                          )}
+                        >
+                          {"Medium"}
+                        </label>
+                      </div>
+                    </>
+                  )}
+                </li>
+                <li class="hover:bg-hoverbg flex justify-between items-center pb-2">
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div
+                        onClick={() => {
+                          filterclick.indexOf(" Not Recommended") !== -1
+                            ? setFilterclick(
+                                filterclick.replace(" Not Recommended", "")
                               )
                             : setFilterclick(
-                                filterclick.concat(" Recommended")
+                                filterclick.concat(" Not Recommended")
                               );
-                        } else {
-                          filterclick.indexOf(" Low") !== -1
-                            ? setFilterclick(filterclick.replace(" Low", ""))
-                            : setFilterclick(filterclick.concat(" Low"));
-                        }
-                      }}
-                    />
-                    <label
-                      for="12"
-                      class={cx(
-                        "font-thin ml-3 text-sm",
-                        { "text-orange bg-bgorange": filter == "basic" },
-                        { "text-fontgrey font-thin": filter != "basic" }
-                      )}
-                    >
-                      {filter == "basic" ? "Recommended" : "Low"}
-                    </label>
-                  </div>
-                  <span
-                    class={cx(
-                      "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                      { hidden: filter != "basic" }
-                    )}
-                  >
-                    24
-                  </span>
-                </li>
-                <li class="hover:bg-hoverbg flex justify-between items-center pb-2">
-                  <div
-                    onClick={() => {
-                      if (filter == "basic") {
-                        filterclick.indexOf(" Top Ranked") !== -1
-                          ? setFilterclick(
-                              filterclick.replace(" Top Ranked", "")
-                            )
-                          : setFilterclick(filterclick.concat(" Top Ranked"));
-                      } else {
-                        filterclick.indexOf(" Medium") !== -1
-                          ? setFilterclick(filterclick.replace(" Medium", ""))
-                          : setFilterclick(filterclick.concat(" Medium"));
-                      }
-                    }}
-                  >
-                    <input type="checkbox" id="13" />
-                    <label
-                      for="13"
-                      class={cx(
-                        "ml-3 font-thin text-sm",
-                        { "text-green bg-bggreen": filter == "basic" },
-                        { "text-fontgrey font-thin": filter != "basic" }
-                      )}
-                    >
-                      {filter == "basic" ? "Top Ranked" : "Medium"}
-                    </label>
-                  </div>
-                  <span
-                    class={cx(" bg-bggrey px-2 rounded-sm text-xs ", {
-                      hidden: filter != "basic"
-                    })}
-                  >
-                    24
-                  </span>
-                </li>
-                <li class="hover:bg-hoverbg flex justify-between items-center pb-2">
-                  <div
-                    onClick={() => {
-                      if (filter == "basic") {
-                        filterclick.indexOf(" Not Recommended") !== -1
-                          ? setFilterclick(
-                              filterclick.replace(" Not Recommended", "")
-                            )
-                          : setFilterclick(
-                              filterclick.concat(" Not Recommended")
-                            );
-                      } else {
-                        filterclick.indexOf(" High") !== -1
-                          ? setFilterclick(filterclick.replace(" High", ""))
-                          : setFilterclick(filterclick.concat(" High"));
-                      }
-                    }}
-                  >
-                    <input type="checkbox" id="14" />
-                    <label
-                      for="14"
-                      class={cx(
-                        "font-thin ml-3 text-sm",
-                        { "text-red bg-bgred": filter == "basic" },
-                        { "text-fontgrey font-thin": filter != "basic" }
-                      )}
-                    >
-                      {filter == "basic" ? "Not Recommended" : "High"}
-                    </label>
-                  </div>
-                  <span
-                    class={cx(
-                      "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                      { hidden: filter != "basic" }
-                    )}
-                  >
-                    24
-                  </span>
+                        }}
+                      >
+                        <input type="checkbox" id="14" />
+                        <label
+                          for="14"
+                          class={cx(
+                            "font-thin ml-3 text-sm",
+                            { "text-red bg-bgred": filter == "basic" },
+                            { "text-fontgrey font-thin": filter != "basic" }
+                          )}
+                        >
+                          {"Not Recommended"}
+                        </label>
+                      </div>
+                      <span
+                        class={cx(
+                          "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                          { hidden: filter != "basic" }
+                        )}
+                      >
+                        24
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div
+                        onClick={() => {
+                          filterclick.indexOf(" High") !== -1
+                            ? setFilterclick(filterclick.replace(" High", ""))
+                            : setFilterclick(filterclick.concat(" High"));
+                        }}
+                      >
+                        <input type="checkbox" id="14" />
+                        <label
+                          for="14"
+                          class={cx(
+                            "font-thin ml-3 text-sm",
+                            { "text-red bg-bgred": filter == "basic" },
+                            { "text-fontgrey font-thin": filter != "basic" }
+                          )}
+                        >
+                          {"High"}
+                        </label>
+                      </div>
+                    </>
+                  )}
                 </li>
               </ul>
               <h3 class="pt-2 font-semibold">
@@ -384,106 +451,161 @@ function IndexPage() {
               </h3>
               <ul class="pt-2 pb-2 border-b border-bgdarkgrey">
                 <li class="hover:bg-hoverbg flex justify-between items-center pb-2 font-thin text-fontgrey">
-                  <div>
-                    <input
-                      type="checkbox"
-                      id="15"
-                      onClick={() => {
-                        if (filter == "basic") {
-                          filterclick.indexOf(" Equity") !== -1
-                            ? setFilterclick(filterclick.replace(" Equity", ""))
-                            : setFilterclick(filterclick.concat(" Equity"));
-                        } else {
-                          filterclick.indexOf(" Divided Payout") !== -1
-                            ? setFilterclick(
-                                filterclick.replace(" Divided Payout", "")
-                              )
-                            : setFilterclick(
-                                filterclick.concat(" Divided Payout")
-                              );
-                        }
-                      }}
-                    />
-                    <label for="15" class=" ml-3 text-sm">
-                      {filter == "basic" ? "Equity" : "Divided Payout"}
-                    </label>
-                  </div>
-                  <span
-                    class={cx(
-                      "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                      { hidden: filter != "basic" }
-                    )}
-                  >
-                    12
-                  </span>
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="15"
+                          onClick={() => {
+                            filterclick.indexOf(" Equity") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(" Equity", "")
+                                )
+                              : setFilterclick(filterclick.concat(" Equity"));
+                          }}
+                        />
+                        <label for="15" class=" ml-3 text-sm">
+                          {"Equity"}
+                        </label>
+                      </div>
+                      <span
+                        class={cx(
+                          "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                          { hidden: filter != "basic" }
+                        )}
+                      >
+                        12
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="15"
+                          onClick={() => {
+                            filterclick.indexOf(" Divided Payout") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(" Divided Payout", "")
+                                )
+                              : setFilterclick(
+                                  filterclick.concat(" Divided Payout")
+                                );
+                          }}
+                        />
+                        <label for="15" class=" ml-3 text-sm">
+                          {"Divided Payout"}
+                        </label>
+                      </div>
+                    </>
+                  )}
                 </li>
                 <li class="hover:bg-hoverbg flex justify-between items-center pb-2 font-thin text-fontgrey">
-                  <div>
-                    <input
-                      type="checkbox"
-                      id="16"
-                      onClick={() => {
-                        if (filter == "basic") {
-                          filterclick.indexOf(" Debt") !== -1
-                            ? setFilterclick(filterclick.replace(" Debt", ""))
-                            : setFilterclick(filterclick.concat(" Debt"));
-                        } else {
-                          filterclick.indexOf(" Divided Reinvestment") !== -1
-                            ? setFilterclick(
-                                filterclick.replace(" Divided Reinvestment", "")
-                              )
-                            : setFilterclick(
-                                filterclick.concat(" Divided Reinvestment")
-                              );
-                        }
-                      }}
-                    />
-                    <label for="16" class="ml-3 text-sm">
-                      {filter == "basic" ? "Debt" : "Divided Reinvestment"}
-                    </label>
-                  </div>
-                  <span
-                    class={cx(
-                      "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                      { hidden: filter != "basic" }
-                    )}
-                  >
-                    12
-                  </span>
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="16"
+                          onClick={() => {
+                            filterclick.indexOf(" Debt") !== -1
+                              ? setFilterclick(filterclick.replace(" Debt", ""))
+                              : setFilterclick(filterclick.concat(" Debt"));
+                          }}
+                        />
+                        <label for="16" class="ml-3 text-sm">
+                          {"Debt"}
+                        </label>
+                      </div>
+                      <span
+                        class={cx(
+                          "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                          { hidden: filter != "basic" }
+                        )}
+                      >
+                        12
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="16"
+                          onClick={() => {
+                            filterclick.indexOf(" Divided Reinvestment") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(
+                                    " Divided Reinvestment",
+                                    ""
+                                  )
+                                )
+                              : setFilterclick(
+                                  filterclick.concat(" Divided Reinvestment")
+                                );
+                          }}
+                        />
+                        <label for="16" class="ml-3 text-sm">
+                          {"Divided Reinvestment"}
+                        </label>
+                      </div>
+                    </>
+                  )}
                 </li>
                 <li class="hover:bg-hoverbg flex justify-between items-center pb-2 font-thin text-fontgrey">
-                  <div>
-                    <input
-                      type="checkbox"
-                      id="17"
-                      onClick={() => {
-                        if (filter == "basic") {
-                          filterclick.indexOf(" Hybrid") !== -1
-                            ? setFilterclick(filterclick.replace(" Hybrid", ""))
-                            : setFilterclick(filterclick.concat(" Hybrid"));
-                        } else {
-                          filterclick.indexOf(" Reinvestment") !== -1
-                            ? setFilterclick(
-                                filterclick.replace(" Reinvestment", "")
-                              )
-                            : setFilterclick(
-                                filterclick.concat(" Reinvestment")
-                              );
-                        }
-                      }}
-                    />
-                    <label for="17" class=" ml-3 text-sm">
-                      {filter == "basic" ? "Hybrid" : "Reinvestment"}
-                    </label>
-                  </div>
-                  <span
-                    class={cx(
-                      "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                      { hidden: filter != "basic" }
-                    )}
-                  >
-                    12
-                  </span>
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="17"
+                          onClick={() => {
+                            filterclick.indexOf(" Hybrid") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(" Hybrid", "")
+                                )
+                              : setFilterclick(filterclick.concat(" Hybrid"));
+                          }}
+                        />
+                        <label for="17" class=" ml-3 text-sm">
+                          {"Hybrid"}
+                        </label>
+                      </div>
+                      <span
+                        class={cx(
+                          "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                          { hidden: filter != "basic" }
+                        )}
+                      >
+                        12
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="17"
+                          onClick={() => {
+                            filterclick.indexOf(" Reinvestment") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(" Reinvestment", "")
+                                )
+                              : setFilterclick(
+                                  filterclick.concat(" Reinvestment")
+                                );
+                          }}
+                        />
+                        <label for="17" class=" ml-3 text-sm">
+                          {"Reinvestment"}
+                        </label>
+                      </div>
+                    </>
+                  )}
                 </li>
                 <li
                   class={cx(
@@ -491,30 +613,37 @@ function IndexPage() {
                     { hidden: filter != "basic" }
                   )}
                 >
-                  <div>
-                    <input
-                      type="checkbox"
-                      id="22"
-                      onClick={() => {
-                        if (filter == "basic") {
-                          filterclick.indexOf(" Others") !== -1
-                            ? setFilterclick(filterclick.replace(" Others", ""))
-                            : setFilterclick(filterclick.concat(" Others"));
-                        } else setFilterclick("");
-                      }}
-                    />
-                    <label for="22" class=" ml-3 text-sm">
-                      Others
-                    </label>
-                  </div>
-                  <span
-                    class={cx(
-                      "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                      { hidden: filter != "basic" }
-                    )}
-                  >
-                    12
-                  </span>
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div>
+                        <input
+                          type="checkbox"
+                          id="22"
+                          onClick={() => {
+                            filterclick.indexOf(" Others") !== -1
+                              ? setFilterclick(
+                                  filterclick.replace(" Others", "")
+                                )
+                              : setFilterclick(filterclick.concat(" Others"));
+                          }}
+                        />
+                        <label for="22" class=" ml-3 text-sm">
+                          Others
+                        </label>
+                      </div>
+                      <span
+                        class={cx(
+                          "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                          { hidden: filter != "basic" }
+                        )}
+                      >
+                        12
+                      </span>
+                    </>
+                  ) : (
+                    <></>
+                  )}
                 </li>
               </ul>
               <div class="pt-4 border-b border-bgdarkgrey pb-4">
@@ -538,7 +667,7 @@ function IndexPage() {
                     { hidden: filter != "basic" }
                   )}
                   id="myRange"
-                  onChange={(e) => {
+                  onChange={e => {
                     setval(e.target.value);
                     console.log(e);
                   }}
@@ -556,34 +685,39 @@ function IndexPage() {
                   })}
                 >
                   <li class="flex justify-between items-center pb-2 font-thin text-fontgrey">
-                    <div>
-                      <input
-                        type="checkbox"
-                        id="3"
-                        onClick={() => {
-                          if (filter != "basic") {
-                            filterclick.indexOf(" Divided Payout") !== -1
-                              ? setFilterclick(
-                                  filterclick.replace(" Divided Payout", "")
-                                )
-                              : setFilterclick(
-                                  filterclick.concat(" Divided Payout")
-                                );
-                          } else setFilterclick("");
-                        }}
-                      />
-                      <label for="3" class=" ml-3 text-sm">
-                        {filter == "basic" ? "Equity" : "Divided Payout"}
-                      </label>
-                    </div>
-                    <span
-                      class={cx(
-                        "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                        { hidden: filter != "basic" }
-                      )}
-                    >
-                      12
-                    </span>
+                    {filter != "basic" ? (
+                      <>
+                        {" "}
+                        <div>
+                          <input
+                            type="checkbox"
+                            id="3"
+                            onClick={() => {
+                              filterclick.indexOf(" Divided Payout") !== -1
+                                ? setFilterclick(
+                                    filterclick.replace(" Divided Payout", "")
+                                  )
+                                : setFilterclick(
+                                    filterclick.concat(" Divided Payout")
+                                  );
+                            }}
+                          />
+                          <label for="3" class=" ml-3 text-sm">
+                            {"Divided Payout"}
+                          </label>
+                        </div>
+                        <span
+                          class={cx(
+                            "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                            { hidden: filter != "basic" }
+                          )}
+                        >
+                          12
+                        </span>
+                      </>
+                    ) : (
+                      <> </>
+                    )}
                   </li>
                   <li class="flex justify-between items-center pb-2 font-thin text-fontgrey">
                     <div>
@@ -728,112 +862,155 @@ function IndexPage() {
               </h3>
               <ul class="pt-2 pb-2 border-b border-bgdarkgrey">
                 <li class="hover:bg-hoverbg flex justify-between items-center pb-2 font-thin text-fontgrey">
-                  <div
-                    onClick={() => {
-                      filter == "basic"
-                        ? filterclick.indexOf(" Aditya Birla Mutual Fund") !==
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div
+                        onClick={() => {
+                          filterclick.indexOf(" Aditya Birla Mutual Fund") !==
                           -1
-                          ? setFilterclick(
-                              filterclick.replace(
-                                " Aditya Birla Mutual Fund",
-                                ""
+                            ? setFilterclick(
+                                filterclick.replace(
+                                  " Aditya Birla Mutual Fund",
+                                  ""
+                                )
                               )
-                            )
-                          : setFilterclick(
-                              filterclick.concat(" Aditya Birla Mutual Fund")
-                            )
-                        : filterclick.indexOf(" Below 500 Crores") !== -1
-                        ? setFilterclick(
-                            filterclick.replace(" Below 500 Crores", "")
-                          )
-                        : setFilterclick(
-                            filterclick.concat(" Below 500 Crores")
-                          );
-                    }}
-                  >
-                    <input type="checkbox" id="8" />
-                    <label for="8" class=" ml-3 text-sm">
-                      {filter == "basic"
-                        ? "Aditya Birla Mutual Fund"
-                        : "Below 500 Crores"}
-                    </label>
-                  </div>
-                  <span
-                    class={cx(
-                      "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                      { hidden: filter != "basic" }
-                    )}
-                  >
-                    12
-                  </span>
+                            : setFilterclick(
+                                filterclick.concat(" Aditya Birla Mutual Fund")
+                              );
+                        }}
+                      >
+                        <input type="checkbox" id="8" />
+                        <label for="8" class=" ml-3 text-sm">
+                          {" "}
+                          Aditya Birla Mutual Fund
+                        </label>
+                      </div>
+                      <span
+                        class={cx(
+                          "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                          { hidden: filter != "basic" }
+                        )}
+                      >
+                        12
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div
+                        onClick={() => {
+                          filterclick.indexOf(" Below 500 Crores") !== -1
+                            ? setFilterclick(
+                                filterclick.replace(" Below 500 Crores", "")
+                              )
+                            : setFilterclick(
+                                filterclick.concat(" Below 500 Crores")
+                              );
+                        }}
+                      >
+                        <input type="checkbox" id="8" />
+                        <label for="8" class=" ml-3 text-sm">
+                          "Below 500 Crores"
+                        </label>
+                      </div>
+                    </>
+                  )}
                 </li>
                 <li class="hover:bg-hoverbg flex justify-between items-center pb-2 font-thin text-fontgrey">
-                  <div
-                    onClick={() => {
-                      filter == "basic"
-                        ? filterclick.indexOf(" HDFC Mutual Fund") !== -1
-                          ? setFilterclick(
-                              filterclick.replace(" HDFC Mutual Fund", "")
-                            )
-                          : setFilterclick(
-                              filterclick.concat(" HDFC Mutual Fund")
-                            )
-                        : filterclick.indexOf("500 - 1000 Crores") !== -1
-                        ? setFilterclick(
-                            filterclick.replace("500 - 1000 Crores", "")
-                          )
-                        : setFilterclick(
-                            filterclick.concat(" 500 - 1000 Crores")
-                          );
-                    }}
-                  >
-                    <input type="checkbox" id="9" />
-                    <label for="9" class="ml-3 text-sm">
-                      {filter == "basic"
-                        ? "HDFC Mutual Fund"
-                        : "500 - 1000 Crores"}
-                    </label>
-                  </div>
-                  <span
-                    class={cx(
-                      "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                      { hidden: filter != "basic" }
-                    )}
-                  >
-                    12
-                  </span>
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div
+                        onClick={() => {
+                          filterclick.indexOf(" HDFC Mutual Fund") !== -1
+                            ? setFilterclick(
+                                filterclick.replace(" HDFC Mutual Fund", "")
+                              )
+                            : setFilterclick(
+                                filterclick.concat(" HDFC Mutual Fund")
+                              );
+                        }}
+                      >
+                        <input type="checkbox" id="9" />
+                        <label for="9" class="ml-3 text-sm">
+                          {"HDFC Mutual Fund"}
+                        </label>
+                      </div>
+                      <span
+                        class={cx(
+                          "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                          { hidden: filter != "basic" }
+                        )}
+                      >
+                        12
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div
+                        onClick={() => {
+                          filterclick.indexOf("500 - 1000 Crores") !== -1
+                            ? setFilterclick(
+                                filterclick.replace("500 - 1000 Crores", "")
+                              )
+                            : setFilterclick(
+                                filterclick.concat(" 500 - 1000 Crores")
+                              );
+                        }}
+                      >
+                        <input type="checkbox" id="9" />
+                        <label for="9" class="ml-3 text-sm">
+                          {"500 - 1000 Crores"}
+                        </label>
+                      </div>
+                    </>
+                  )}
                 </li>
                 <li class="hover:bg-hoverbg flex justify-between items-center pb-2 font-thin text-fontgrey">
-                  <div
-                    onClick={() => {
-                      filter == "basic"
-                        ? filterclick == " Reliance Mutual Fund"
-                          ? setFilterclick("")
-                          : setFilterclick(
-                              filterclick.concat(" Reliance Mutual Fund")
-                            )
-                        : filterclick == " Above 1000 Crores"
-                        ? setFilterclick("")
-                        : setFilterclick(
-                            filterclick.concat(" Above 1000 Crores")
-                          );
-                    }}
-                  >
-                    <input type="checkbox" id="10" />
-                    <label for="10" class=" ml-3 text-sm">
-                      {filter == "basic"
-                        ? "Reliance Mutual Fund"
-                        : "Above 1000 Crores"}
-                    </label>
-                  </div>
-                  <span
-                    class={cx(
-                      "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                      { hidden: filter != "basic" }
-                    )}
-                  >
-                    12
-                  </span>
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div
+                        onClick={() => {
+                          filterclick == " Reliance Mutual Fund"
+                            ? setFilterclick("")
+                            : setFilterclick(
+                                filterclick.concat(" Reliance Mutual Fund")
+                              );
+                        }}
+                      >
+                        <input type="checkbox" id="10" />
+                        <label for="10" class=" ml-3 text-sm">
+                          {"Reliance Mutual Fund"}
+                        </label>
+                      </div>
+                      <span
+                        class={cx(
+                          "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                          { hidden: filter != "basic" }
+                        )}
+                      >
+                        12
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div
+                        onClick={() => {
+                          filterclick == " Above 1000 Crores"
+                            ? setFilterclick("")
+                            : setFilterclick(
+                                filterclick.concat(" Above 1000 Crores")
+                              );
+                        }}
+                      >
+                        <input type="checkbox" id="10" />
+                        <label for="10" class=" ml-3 text-sm">
+                          {"Above 1000 Crores"}
+                        </label>
+                      </div>
+                    </>
+                  )}
                 </li>
                 <li
                   class={cx(
@@ -841,32 +1018,37 @@ function IndexPage() {
                     { hidden: filter != "basic" }
                   )}
                 >
-                  <div
-                    onClick={() => {
-                      filter == "basic"
-                        ? filterclick.indexOf(" Tata Mutual Fund") !== -1
-                          ? setFilterclick(
-                              filterclick.replace(" Tata Mutual Fund", "")
-                            )
-                          : setFilterclick(
-                              filterclick.concat(" Tata Mutual Fund")
-                            )
-                        : setFilterclick("");
-                    }}
-                  >
-                    <input type="checkbox" id="11" />
-                    <label for="11" class=" ml-3 text-sm">
-                      Tata Mutual Fund
-                    </label>
-                  </div>
-                  <span
-                    class={cx(
-                      "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
-                      { hidden: filter != "basic" }
-                    )}
-                  >
-                    12
-                  </span>
+                  {filter == "basic" ? (
+                    <>
+                      {" "}
+                      <div
+                        onClick={() => {
+                          filterclick.indexOf(" Tata Mutual Fund") !== -1
+                            ? setFilterclick(
+                                filterclick.replace(" Tata Mutual Fund", "")
+                              )
+                            : setFilterclick(
+                                filterclick.concat(" Tata Mutual Fund")
+                              );
+                        }}
+                      >
+                        <input type="checkbox" id="11" />
+                        <label for="11" class=" ml-3 text-sm">
+                          Tata Mutual Fund
+                        </label>
+                      </div>
+                      <span
+                        class={cx(
+                          "text-fontclr bg-bggrey px-2 rounded-sm text-xs ",
+                          { hidden: filter != "basic" }
+                        )}
+                      >
+                        12
+                      </span>
+                    </>
+                  ) : (
+                    <></>
+                  )}
                 </li>
                 <li class="flex justify-between items-center pb-2 font-thin text-fontgrey">
                   {filter == "basic" ? (
@@ -1253,101 +1435,47 @@ function IndexPage() {
             <div class="flex mb-4 justify-between items-center">
               <button
                 class="px-3 py-2 bg-white shadow-md rounded-md text-fontgrey text-sm hover:bg-hoverbg"
-                onClick={() =>
+                onClick={() => {
                   startValue > 0
                     ? setStartValue(startValue - 20)
-                    : setStartValue(0)
-                }
+                    : setStartValue(0);
+                  activePage != 1
+                    ? setActivePage(activePage - 1)
+                    : setActivePage(1);
+                }}
               >
                 Previous
               </button>
-              <ul class="flex  shadow-md rounded-md bg-white lg:hidden">
-                {" "}
-                <a
-                  onClick={() => {
-                    setStartValue(0);
-                  }}
-                  class={cx("cursor-pointer", {
-                    "hover:bg-hoverbg": startValue != 0,
-                    "bg-bgblue text-white": startValue == 0
-                  })}
-                >
-                  <li class=" px-4 py-2  ">1</li>
-                </a>
-                <a
-                  onClick={() => {
-                    setStartValue(20);
-                  }}
-                  class={cx("cursor-pointer", {
-                    "hover:bg-hoverbg": startValue != 20,
-                    "bg-bgblue text-white": startValue == 20
-                  })}
-                >
-                  <li class=" px-4 py-2  border-l border-bgdarkgrey">2</li>
-                </a>
-                <a
-                  onClick={() => {
-                    setStartValue(40);
-                  }}
-                  class={cx("cursor-pointer", {
-                    "hover:bg-hoverbg": startValue != 40,
-                    "bg-bgblue text-white": startValue == 40
-                  })}
-                >
-                  <li class=" px-4 py-2  border-l border-bgdarkgrey">3</li>
-                </a>
-                <a
-                  onClick={() => {
-                    setStartValue(60);
-                  }}
-                  class={cx("cursor-pointer", {
-                    "hover:bg-hoverbg": startValue != 60,
-                    "bg-bgblue text-white": startValue == 60
-                  })}
-                >
-                  <li class=" px-4 py-2  border-l border-bgdarkgrey">4</li>
-                </a>
-                <a
-                  onClick={() => {
-                    setStartValue(80);
-                  }}
-                  class={cx("cursor-pointer", {
-                    "hover:bg-hoverbg": startValue != 80,
-                    "bg-bgblue text-white": startValue == 80
-                  })}
-                >
-                  <li class=" px-4 py-2  border-l border-bgdarkgrey">5</li>
-                </a>
-                <a
-                  onClick={() => {
-                    setStartValue(100);
-                  }}
-                  class={cx("cursor-pointer", {
-                    "hover:bg-hoverbg": startValue != 100,
-                    "bg-bgblue text-white": startValue == 100
-                  })}
-                >
-                  <li class=" px-4 py-2  border-l border-bgdarkgrey">6</li>
-                </a>
-                <a
-                  onClick={() => {
-                    setStartValue(120);
-                  }}
-                  class={cx("cursor-pointer", {
-                    "hover:bg-hoverbg": startValue != 120,
-                    "bg-bgblue text-white": startValue == 120
-                  })}
-                >
-                  <li class=" px-4 py-2  pr-3 border-l border-bgdarkgrey">7</li>
-                </a>
-              </ul>
+              <Pagination
+                innerClass={
+                  "flex items-center justify-between bg-white shadow-md rounded-md"
+                }
+                activeClass={"bg-bgblue text-white"}
+                itemClass={"px-4 py-2 text-sm border-l border-bgdarkgrey"}
+                activePage={activePage}
+                itemClassFirst="border-none"
+                itemClassPrev="hidden"
+                itemClassNext="hidden"
+                itemsCountPerPage={20}
+                totalItemsCount={605}
+                pageRangeDisplayed={5}
+                onChange={e => {
+                  setActivePage(e);
+                  console.log(e * 20, "e");
+                  setStartValue(e * 20 + 1);
+                }}
+              />
               <button
                 class="px-3 py-2 bg-white shadow-md rounded-md text-fontgrey text-sm hover:bg-hoverbg"
-                onClick={() =>
+                onClick={() => {
                   startValue < 600
                     ? setStartValue(startValue + 20)
-                    : setStartValue(600)
-                }
+                    : setStartValue(600);
+
+                  activePage != 31
+                    ? setActivePage(activePage + 1)
+                    : setActivePage(31);
+                }}
               >
                 Next
               </button>
